@@ -1,0 +1,22 @@
+/* pages/performance/performance.wxss */
+page{ background-color:#fff;}
+.clear{ clear: both;}
+.headOut{padding:1rem 1rem 0; border-top: 1px solid #f2f2f2; border-bottom:1rpx solid #f2f2f2;}
+/*头部背景色渐变*/
+.head{  border-radius: 0.5rem; margin-bottom: 3rem; background: linear-gradient(to bottom right, #ff7076 0%,#ff8489 50%,#ff5f65 100%);}
+.externalText{ float: left; position: relative; left: 50%; margin:1rem 0 0.5rem;}
+.externalText .inner{ position: relative; left: -50%; color:#fff;}
+.externalNumber{  float: left; position: relative; left: 50%; margin:0 0 1rem; }
+.externalNumber .inner{ position: relative; left: -50%; color:#fff; font-size: 2rem;}
+.detailsList{ overflow: hidden; padding-bottom: 10rpx;}
+.details{ float: left; width:33.33%; text-align: center; color: #fff;}
+.details image{ width: 40rpx; height: 40rpx;}
+/*全部订单*/
+.formProperty{height:100rpx; line-height: 100rpx; background-color: #fff; border-bottom: 1px solid #f2f2f2; padding-left: 5%; color: #333;}
+.formProperty view{ float: left;}
+.formProperty .value{ width: 60%;}
+.formProperty .value input{height: 100rpx;}
+/*全部订单尾部箭头*/
+.orderAll .icon{   width:40rpx; height: 40rpx; margin-top:4%; float: left; margin-right: 0.5rem;}
+.orderAll .arrows{ width:40rpx; height: 40rpx; margin-top:4%; float: right; margin-right: 1rem;}
+

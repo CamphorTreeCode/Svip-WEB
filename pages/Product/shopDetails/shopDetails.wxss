@@ -1,0 +1,167 @@
+/* pages/Product/shopDetails/shopDetails.wxss */
+page{
+  /* border:1px solid transparent; */
+  display: block;
+  min-height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  background: #fff
+}
+.swiper{
+  height:198px;
+
+}
+.topTitle{
+padding:3% 3% 2% 3%;
+}
+.titleText{
+  height:110rpx;
+
+}
+.shopTextImg{
+  position:absolute;
+}
+.titleText image{
+  width:40rpx;
+  height:40rpx;
+}
+.spantext{
+    font-size: 0.9rem;  
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+text-indent:1.5em;
+color:#636363;
+}
+.centerShlfopMoney{
+  height: 50rpx;
+
+  line-height: 50rpx;
+  font-size: 0.8rem;
+    letter-spacing:0.51px;
+}
+.leftMoney{
+  color: #F31A4B;
+
+}
+.leftMoney span{
+  font-weight: bold;
+  font-size: 1rem;
+  letter-spacing:0.5px;
+}
+.rightMoney{
+  text-decoration:line-through;
+}
+.bottomLable{
+  height: 60rpx;
+  line-height: 60rpx;
+  color:#545454;
+  font-size: 0.75rem;
+}
+.lableBody{
+width:22%;
+
+}
+.lableBody .lableLine{
+height:5px;
+width:5px;
+background:#FA7173;
+border-radius:50%;
+margin-right:4%;
+}
+.youhuiquan{
+height:130rpx;
+border-top:12px solid #F2F2F2;
+border-bottom:12px solid #F2F2F2;
+padding:3% 5%;
+  position: relative;
+}
+.youhuiquan image{
+height: 100%;
+width: 100%;
+}
+
+.youhuiNumber{
+
+position: absolute;
+width: 50%;
+top:15%;
+left:10%;
+height: 70%;
+
+}
+.number{
+font-size: 0.7rem;
+color: #fff;
+height: 100%;
+width:41%;
+line-height: 120rpx
+}
+.number span{
+ font-size: 1.82rem;
+ font-weight: 700
+
+}
+.youhuiText{
+font-size:0.75rem;
+color:#fff;
+line-height:90rpx;
+height:11%;
+
+}
+.youhuiCopy{
+  font-size: 0.68rem;
+  line-height: 120rpx;
+  color: #fff;
+}
+.immediately{
+position:absolute;
+right:9%;
+top:39%;
+color:#fff;
+font-size:0.8rem;
+
+}
+.listImg{
+  border: 0px;
+  
+}
+.listImg image{
+border: 0px;
+width: 100%;
+}
+.bottomfiex{
+  position: fixed;
+  height: 50px;
+  bottom: 0%;
+
+  width: 100%;
+  color: #fff;
+}
+.homeImg{
+  height: 100%;
+  width: 20%;
+  background: #fff;
+  
+}
+.homeImg image{
+height:45%;
+width:34%;
+
+}
+.zhuanfa{
+  height: 100%;
+  width: 40%;
+  background: #FFA7AB;
+  
+}
+.copyCode{
+  height: 100%;
+  width: 40%;
+  background: #FF7076;
+}

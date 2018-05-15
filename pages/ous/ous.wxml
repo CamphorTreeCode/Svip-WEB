@@ -1,0 +1,8 @@
+<view>
+    <view class='ww  w1'><image  src='/img/ous/品牌@2x.png'></image>品牌</view>
+    <view class='a'><image class='b' src='{{aboutmeimg}}'></image></view>
+    <view class='ss'>{{aboutmecontent}}</view>
+    <view class='ww sc w2'><image src='/img/ous/加入家族-线性@2x.png'></image>团队及服务</view>
+    <view class='ss'>{{aboutmeserver}}</view>
+    <view class='ss sa'>{{}}</view>
+</view>

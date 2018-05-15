@@ -1,0 +1,16 @@
+/* pages/svipLogin/svipLogin.wxss */
+page{ background: #fff;}
+/*头部logo*/
+.head{ height: 400rpx; border-top: 1rpx solid #f2f2f2; text-align: center;}
+.head image{ width: 300rpx; height: 300rpx; margin-top: 50rpx;}
+/*表单通用属性*/
+.formProperty{ margin: 0 1rem; border-bottom: 1px solid #f2f2f2; height: 100rpx;}
+.formProperty image{ width: 40rpx; height: 40rpx; float: left; margin: 30rpx;}
+.formProperty input{ height:100rpx; color: #333;}
+/*提交按钮*/
+.submitView{ background-color: #fff; padding: 50rpx 2%;}
+.submit{ width: 96%;  background-color:#ff6269; border-radius: 20rpx; color: #fff;}
+
+/*广告栏位*/
+.advertising{ position: fixed; bottom: 2%; color: #999; font-size: 0.6rem; width: 100%;}
+.advertising view{ text-align: center;}

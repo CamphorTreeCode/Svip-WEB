@@ -1,0 +1,26 @@
+<!--pages/index/cardCenter/cardCenter.wxml-->
+<view class="yuhuiquanBody" wx:for="{{cardArr}}">
+  <view class="cardImg">
+    <image src="/img/type/quan.png"></image>
+  </view>
+
+    <view class="shopimg">
+      <image src="{{item.img}}">
+      </image>
+    </view>
+
+    <view class="mgdetails">
+      <view class="titles">
+        {{item.titel}}
+      </view>
+      <view class="youhui">￥{{item.shopMoneydis}}</view>
+    </view>
+     <view class="number">
+      <view class="moneyNumber">￥<span class="mmubey">{{item.discountMoney}}</span></view>
+      <view class="text">优惠卷</view>
+     </view>
+     <view class="lingqu">
+      一键领取
+     </view>
+  
+</view>

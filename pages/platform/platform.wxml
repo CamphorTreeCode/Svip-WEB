@@ -1,0 +1,10 @@
+<!--pages/platform/platform.wxml-->
+<view wx:for="{{platform}}"  wx:for-item="item" wx:for-index="index" class='xh'>
+  <view class='platform' bindtap='checkPlatform' data-index='{{index}}' data-text='{{item.platformName}}'>
+      <image src='{{item.platformImg}}' class='icon'></image>
+      <text>{{item.platformName}}</text>
+      <image src='/img/ApplicationToJoin/gouxuan@2x.png ' class='check' style='display:{{check[index]}}'></image>
+  </view>
+</view>
+
+<button class='submit' bindtap='submitPlarform'>确定</button>

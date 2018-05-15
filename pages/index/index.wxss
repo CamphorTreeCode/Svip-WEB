@@ -1,0 +1,155 @@
+ page{
+   background: #EEEEEE;
+ }
+ swiper {
+   height:185px;}
+/*轮播图  */
+.slide-image {
+  height: 100%;
+  width: 100%;
+}
+/*功能区域  */
+.functions{
+height:350rpx;
+background:#fff;
+padding-top:1.8%;
+padding-bottom:1%;
+}
+.functions .oneFunctions{
+  width: 24.6%;
+  height: 49%;
+}
+.functionImg{
+height:62%;
+width:100%;
+ border: 1rpx solid #fff;
+
+}
+.functions .oneFunctions image{
+width:45%;
+height:77%;
+display:block;
+margin:0 auto;
+margin-top:10%;
+}
+.oneFunctionsTitle{
+  font-size: 0.75rem;
+  height: 30%;
+  width: 100%;
+  text-align: center;
+  color: #5E5E5E;
+}
+.notice{
+  height:232rpx;
+
+}
+.notice image{
+  width: 100%;
+  height:100%;
+}
+
+.WaterMachine{
+height:80rpx;
+background:#FFF;
+line-height: 80rpx;
+  color:#3E3E3E;
+
+}
+.waterText{
+height: 100%;
+width: 100%;
+border-bottom: 1rpx solid #F5F5F5;
+}
+.leftText{
+padding-left:5%;
+}
+.rigngtext{
+color:#FE737A;
+padding-right: 1%
+}
+.imgsan{
+  height: 100%;
+  width: 10%;
+
+}
+.imgsan image{
+height:50%;
+width:48%;
+margin-top:25%;
+
+}
+/*商品列表  */
+.shopItem{
+  height:550rpx;
+
+  width: 100%;
+  background:#fff;
+  color:#3E3E3E;
+  font-size: 0.8rem;
+}
+.oneShop{
+  height: 100%;
+  width: 48%;
+  padding:0% 1% 0% 1%;
+
+}
+.shopImg{
+  height: 65%;
+  position: relative;
+}
+.shopImg image{
+  height: 100%;
+  width: 100%;
+}
+.shoptitel{
+  line-height: 45rpx;
+  margin-top: 2%;
+  padding-left: 4%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  height:16%;
+
+}
+ .youhuijuan{
+position:absolute;
+width:41%;
+height:28%;
+top:0%;
+right:7%;
+background-repeat: no-repeat;
+background-size: 100% 100%;
+
+
+}
+.topImg .youhuijuan image{
+  width: 100%;
+  height:100%;
+
+}
+.yhjcontent{
+
+}
+
+.yhjTextt{
+font-size:0.72rem;
+color:#fff;
+text-align:center;
+line-height:13px;
+}
+.yhjtxt{line-height:22px;}
+.shoppriceText{
+padding-left:4%;
+color:#B5B5B5;
+font-size: 0.9rem;
+}
+.shopzuan{
+  color: #FE2351;
+  margin-right:2%;
+}
+.shoppirce{
+  color:#FF2F58;
+  font-weight: bold;
+}

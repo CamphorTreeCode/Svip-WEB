@@ -1,0 +1,133 @@
+/**app.wxss**/
+@import 'components/wux.wxss';
+@import 'assets/styles/weui.wxss';
+@import 'assets/styles/skyvow.wxss';
+page{
+  background: #f2f2f2
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+
+.lf{
+ float: left
+}
+.cl{
+  clear:both;
+}
+.ri{
+  float: right;
+}
+textcenter{
+  text-align: center;
+}
+.join {
+color:#fff;
+font-size:0.7rem;
+background:red;
+
+text-align:center;
+border-radius:5px;
+margin-right:4%;
+background-image:-webkit-linear-gradient(360deg, #fa0e00, #f88232);
+
+
+
+}
+/* //左居中 */
+.box {
+	display: flex;
+	display: -webkit-flex; /*webkit*/
+	-moz-justify-content: flex-start;
+	-webkit-justify-content: flex-start;
+	justify-content: flex-start;
+	-webkit-box-align: center;
+	-moz-align-items: center;
+	-webkit-align-items: center;
+	align-items: center;
+}
+/* 居中 */
+.boxCenter {
+	display: flex;
+	display: -webkit-flex; /*webkit*/
+	-moz-justify-content: center;
+	-webkit-justify-content: center;
+	justify-content: centert;
+	-webkit-box-align: center;
+	-moz-align-items: center;
+	-webkit-align-items: center;
+	align-items: center;
+}
+
+/* 加载图 */
+.main{
+width: 100%;
+height: auto;
+padding:2% 0 2% 0;
+
+}
+a{
+display: block;
+text-align: center;
+font-size: 20px;
+margin-top: 200px;
+}
+.loading{
+width:95px;
+height:20px;
+margin:0 auto;
+text-align:center;
+
+
+}
+.loading span{
+display:block;
+width:5px;
+height:5px;
+margin-right:5px;
+background:#333;
+-webkit-animation:load 1.04s ease infinite;
+border-radius:50%;
+float:left;
+margin-top:7px;
+
+
+}
+.loading span:last-child{
+margin-right: 0px;
+}
+@-webkit-keyframes load{
+0%{
+opacity: 1;
+}
+100%{
+opacity: 0;
+}
+}
+.loading span:nth-child(1){
+-webkit-animation-delay:0.13s;
+}
+.loading span:nth-child(2){
+-webkit-animation-delay:0.26s;
+}
+.loading span:nth-child(3){
+-webkit-animation-delay:0.39s;
+}
+.loading span:nth-child(4){
+-webkit-animation-delay:0.52s;
+}
+.loading span:nth-child(5){
+-webkit-animation-delay:0.65s;
+}
+.jzz{
+float: right;
+    line-height: 20px;font-size:0.7rem;
+
+}

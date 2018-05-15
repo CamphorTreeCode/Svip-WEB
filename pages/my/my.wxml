@@ -1,0 +1,32 @@
+<!--pages/my/my.wxml-->
+<!--头部用户信息-->
+<view class='head'>
+   <!--头像-->
+   <view class='headPortrait'>
+    <image src='https://s18.postimg.cc/4jz97664p/touxiang.png' class='headPortrait'></image>
+   </view>
+   <!--用户名-->
+   <view class='usernameOut'>
+      <view class='username'>Super VIP</view>
+   </view>
+   <view class='clear'></view>
+   <!--性别和年龄-->
+   <view class='AgeAndSexOut'>
+    <view class='AgeAndSex'>
+        <text>男\t21岁</text>
+    </view>
+   </view>
+</view>
+<!--底部操作模块-->
+<view wx:for="{{operation}}"  wx:for-item="item" wx:for-index="index">
+  <view class='operation' data-path='{{item.path}}' data-index='{{index}}' bindtap='operation'>
+      <image src='{{item.image}}'></image>
+      <text>{{item.text}}</text>
+  </view>
+</view>
+
+<!--广告栏位-->
+<view class='advertising'>
+  <view>本小程序由传手开发平台提供技术支持</view>
+  <view>电话热线：021-5763-0970</view>
+</view>

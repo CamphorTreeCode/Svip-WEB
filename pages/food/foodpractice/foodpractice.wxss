@@ -1,0 +1,17 @@
+.a{text-align: center}
+.b{text-align: center}
+view{background: white}
+text{color: rgb(157, 157, 157);}
+.c{padding: 20rpx 0 ;border-top: 1px solid #ccc;border-bottom: 1px solid #ccc;margin-top: 10rpx;padding-left: 30rpx;padding-right: 30rpx}
+.d{padding: 20rpx 0 ;border-bottom: 1px solid #ccc;padding-left: 30rpx;}
+.f{font-weight: bold;}
+.f text{color: black}
+.e{color: rgb(157, 157, 157);}
+view{background: white}
+.img1{width: 100%;}
+.right{float: right;}
+.left_1,.right_1{float: left}
+ .left_1{position: absolute;top: 0;left: 30rpx;font-weight: bold;font-size: 34rpx} 
+.right_1{width: 80%;position: relative;padding: 0 10%}
+.right_1 image{width: 100%;border-radius: 8rpx}
+.operation1{padding-top: 30rpx;}

@@ -1,0 +1,72 @@
+/* pages/index/cardCenter/cardCenter.wxss */
+.yuhuiquanBody{
+ height: 180rpx;
+ padding:2% 3%;
+
+position: relative
+}
+.cardImg {
+height: 100%;
+}
+.cardImg image{
+  height: 100%;
+  width: 100%;
+}
+.carImg imgaty{
+  height: 100%;
+  width: 100%;
+}
+.shopimg{
+position:absolute;
+width:50px;
+height:50px;
+top:25%;
+left:7%;
+
+
+}
+.shopimg image{
+  width: 100%;
+  height: 100%;
+ border-radius: 4px;
+}
+.mgdetails{
+position:absolute;
+top:23%;
+left:24%;
+color:#fff;
+font-size:0.72rem;
+width:26%;
+height:50px;
+
+}
+.number{
+position:absolute;
+top:25%;
+left:54%;
+color:#fff;
+font-size:0.8rem;
+height: 50px;
+}
+.lingqu{
+position:absolute;
+top:37%;
+right:6.5%;
+color: #fff;
+}
+.mgdetails .titles{
+height:73%;
+overflow:hidden;
+text-overflow:ellipsis;
+display:-webkit-box;
+-webkit-line-clamp:2;
+-webkit-box-orient:vertical;
+
+}
+.number .text{
+  font-size: 0.8rem
+}
+.moneyNumber span{
+  font-size:1.2rem;
+  font-weight: bold;
+}

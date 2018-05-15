@@ -1,0 +1,25 @@
+/* pages/food/food.wxss */
+
+.operation .titl{padding: 20rpx 0;background: white ;padding-left: 30rpx; border-top: 1px solid rgb(243,243,243);border-bottom: 1px solid rgb(243,243,243)}
+
+.titl image{width: 40rpx;height: 40rpx;margin-right: 10rpxs}
+
+.tutu{
+  /* height: 280rpx ; */
+  width: 100%;
+  overflow: hidden;
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+  background: white;
+}
+
+image{
+  border-radius: 8rpx;
+  width: 18%;
+  height: 140rpx;
+  margin-left: 2.5%;
+  display: inline-block;
+  float: left;
+}
+
+.txt{line-height: 140rpx;height: 140rpx;display: inline-block;margin-left: 2.5%;color: rgb(251,114,121)}

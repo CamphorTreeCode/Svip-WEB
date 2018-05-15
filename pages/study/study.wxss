@@ -1,0 +1,25 @@
+/* pages/study/study.wxss */
+view{background: white}
+.header:first-child{
+  margin-top: 0
+}
+.c1{color: rgb(154,154,154)}
+.header{padding: 0rpx;margin-top: 30rpx}
+.header .top image {width:80rpx;height: 80rpx;padding:0 30rpx}
+.a{display: inline-block;margin-left: 10rpx}
+.a text{display: block}
+.top{border-top: 1px solid rgb(243,243,243);border-bottom: 1px solid rgb(243,243,243);padding: 20rpx 20rpx}
+.a1{font-weight: bold;font-size: 36rpx}
+.a2{display: inline-block;line-height: 100rpx;float:right;color: rgb(255,102,109)}
+.bottom image{width: 100%;border-radius: 8rpx}
+.b_a{color: rgb(12,162,254);margin-bottom: 20rpx}
+.b_c{font-weight: bold;margin-top: 20rpx}
+.b_b{overflow:hidden; text-overflow:ellipsis;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2; margin: 20rpx 0;color: rgb(154,154,154)}
+.b_d image{width: 40rpx ;height: 30rpx;margin-right: 10rpx}
+.b_d {text-align: right}
+.bottom{padding:0 30rpx}
+.b_aa{margin-left: 30rpx}
+ video{width: 100%;}
+ .qqqq image{float: left;display: block;width: 210rpx;height: 220rpx;border-radius: 15rpx ;margin-left: 20rpx}
+ .qqqq{display: inline-block;}
+ 

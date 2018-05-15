@@ -1,0 +1,58 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/Product/Product",
+    "pages/ApplicationToJoin/ApplicationToJoin",
+    "pages/platform/platform",
+    "pages/my/my",
+    "pages/maintain/maintain",
+    "pages/performance/performance",
+    "pages/svipLogin/svipLogin",
+    "pages/allOrder/allOrder",
+    "pages/Product/shopDetails/shopDetails",
+    "pages/index/cardCenter/cardCenter",
+    "pages/food/food",
+    "pages/food/fooddetail/fooddetail",
+    "pages/food/foodpractice/foodpractice",
+    "pages/study/study",
+    "pages/study/studydetail/studydetail",
+    "pages/ous/ous"
+],
+  "window":{
+  "backgroundTextStyle":"light",
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTitleText": "超级VIP",
+  "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#A3A3A3",
+    "selectedColor": "#FE6F76",
+    "borderStyle": "white",
+    "list": [
+      {
+      "pagePath": "pages/index/index",
+      "text": "首页",
+      "iconPath": "/img/shouye1.png",
+      "selectedIconPath": "/img/shouye.png"
+      },
+      {
+        "pagePath": "pages/Product/Product",
+        "text": "产品分类",
+        "iconPath": "/img/difenlei1.png",
+        "selectedIconPath": "/img/difenlei.png"
+      },
+      {
+        "pagePath": "pages/ApplicationToJoin/ApplicationToJoin",
+        "text": "申请加盟",
+        "iconPath": "/img/tuandui1.png",
+        "selectedIconPath": "/img/tuandui.png"
+      },
+      {
+      "pagePath": "pages/my/my",
+      "text": "我的",
+      "iconPath": "/img/my1.png",
+      "selectedIconPath": "/img/my.png"
+      }
+    ]
+  }
+}

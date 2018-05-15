@@ -1,0 +1,113 @@
+/* pages/maintain/maintain.wxss */
+page{ background-color: #fff;}
+/*标题通用样式 机器型号 客户信息*/
+.title{height:100rpx; line-height: 100rpx;color: #333; font-size: 1.1rem;}
+.title image{  width: 40rpx; height: 40rpx;  vertical-align: middle; margin: 30rpx 20rpx 30rpx 30rpx;}
+/*机器型号特殊样式*/
+.machineModel{ border-bottom: 1rpx solid #f2f2f2; border-top: 1px solid #f2f2f2;}
+/*客户信息*/
+.customerInformation{border-bottom: 1rpx solid #f2f2f2;}
+/*表单样式*/
+.formProperty{height:100rpx; line-height: 100rpx; background-color: #fff; border-bottom: 1px solid #f2f2f2; padding:0 5%; color: #333;}
+.formProperty text{ float: left; }
+.formProperty input{height: 100rpx;}
+/*机器型号输入框 宽度100%*/
+.model{padding-right: 5%;}
+.model .value{ width: 100%;}
+/*购买平台*/
+.platform view{ float: left;}
+.platform image{ width:40rpx; height: 40rpx; margin-top:5%; float: right; margin-right: -3%;}
+/*选择地区*/
+.address view{ float: left;}
+.address image{width:40rpx; height: 40rpx; margin-top:4%; float: right;}
+.address text{ margin-left: 1rem; color: #999;  overflow:hidden;text-overflow:ellipsis;white-space:nowrap; width: 65%;}
+/*提交按钮*/
+.submitView{ background-color: #fff; padding: 50rpx 2%;}
+.submit{ width: 96%;  background-color:#ff6269; border-radius: 20rpx; color: #fff;}
+
+/*地址插件样式*/
+.infoText{
+    margin-top: 20rpx;
+    text-align: center;
+    width: 100%;
+    justify-content: center; 
+}
+
+picker-view{
+  background-color: white;
+  padding: 0;
+  width: 100%; 
+  height: 380rpx;
+  bottom: 0;
+  position: fixed;
+}
+
+picker-view-column view{
+  vertical-align:middle; 
+  font-size: 28rpx;
+  line-height: 28rpx;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ----------------------------------------- */
+
+.animation-element-wrapper {
+  display: flex;  
+  position: fixed;
+  left: 0;
+  top:0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 999;
+}
+.animation-element {
+  display: flex;
+  position: fixed;
+  width: 100%;
+  height: 470rpx;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.animation-button {
+  margin-top: 20rpx;
+  top:20rpx;
+  width: 400rpx;
+  height: 100rpx; 
+  line-height: 100rpx; 
+  align-items:center;
+}
+
+
+.animation-element-wrapper text{
+  display: inline-flex;  
+  position: fixed;
+  margin-top: 20rpx;
+  height: 50rpx;
+  text-align: center;
+  line-height: 50rpx;
+  font-size: 34rpx;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.left-bt{
+  left: 30rpx;
+  color: #ff6269;
+}
+.right-bt {
+  right: 30rpx;
+  color: #ff6269;
+}
+
+.line{
+  display: block;
+  position: fixed;
+  height: 1rpx;
+  width: 100%;
+  margin-top: 89rpx; 
+  background-color: #eeeeee;
+}

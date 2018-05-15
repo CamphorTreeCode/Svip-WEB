@@ -1,0 +1,26 @@
+/* pages/my/my.wxss */
+page{ background-color: #fff; overflow: hidden;}
+.clear{ clear: both;}
+/*页面头部样式*/
+.head{ height:350rpx;  background-image: url('https://www.chuanshoucs.com/ServerImg/2018-04-18/b5ced1af-c26c-4ec8-92e5-76236ff39d53.jpg'); background-size: 100% 350rpx; margin-bottom: 50rpx;}
+/*放置头像的框*/
+.head image.headPortrait{z-index: 999; left: 40%; top: 10%; width: 180rpx; height: 180rpx; border-radius: 200rpx; margin-top: 5%; margin-left: 39%;} 
+/*用户名字居中*/
+.usernameOut{float: left; /* 自适应内容宽度 */
+  position: relative;
+  left: 50%;}
+.username{ color: #fff;   position: relative;
+  left: -50%; }
+/*姓名和性别居中*/
+.AgeAndSexOut{float: left; /* 自适应内容宽度 */
+  position: relative;
+  left: 50%;}
+.AgeAndSex{ color: #fff;   position: relative;
+  left: -50%; }
+/*底部二级菜单*/  
+.operation{height:100rpx; line-height: 100rpx;color: #333; font-size: 1rem; border-bottom: 1px solid #f2f2f2;}
+.operation image{  width: 40rpx; height: 40rpx;  vertical-align: middle; margin: 20rpx 20rpx 30rpx 30rpx;}
+
+/*广告栏位*/
+.advertising{ position: fixed; bottom: 6%; color: #ccc; font-size: 0.7rem; width: 100%;}
+.advertising view{ text-align: center;}

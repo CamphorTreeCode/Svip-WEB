@@ -1,0 +1,274 @@
+<!--轮播图 start  -->
+
+<import src="../../components/actionsheet/actionsheet.wxml" />
+
+<template is="actionsheet" data="{{ ...$wux.actionSheet }}" />
+
+
+<scroll-view scroll-y style="height:{{scrollHeight}}px;" bindscrolltolower="bindDownLoad" bindscroll="scroll">
+
+  <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000" indicator-active-color="#FD7073"  indicator-color="#fff" circular="true">
+    <block wx:for="{{movies}}" wx:for-index="index">
+      <swiper-item>
+        <image src="{{item.url}}" class="slide-image" mode="aspectFill" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <!--轮播图 end  -->
+
+  <!--功能区域  start-->
+  <view class="functions">
+    <view class="oneFunctions lf" wx:for="{{functionImg}}" catchtap='JumpFunctions' id="{{index}}" data-value="{{item.name}}" >
+      <view  class="functionImg">
+        <image src="{{item.url}}"></image>
+      </view>
+      <view class="oneFunctionsTitle">
+        {{item.name}}
+      </view>
+    </view>
+  </view>
+  <!--功能区域  end-->
+
+  <!-- 净水器图 start -->
+  <view class="notice">
+    <image src="{{notice1[0].shoptypeimg}}" mode="aspectFill"></image>
+  </view>
+  <!-- 净水器图 end -->
+  
+  <!--净水器下滑  start-->
+  <view class="WaterMachine">
+    <view class="waterText">
+      <view class="leftText lf">净水器</view>
+      <view class="imgsan ri">
+        <image src="/img/sanjiaxin.png"></image>
+      </view>
+      <view class="rigngtext ri"  bindtap='jingshui'>更多</view>
+
+    </view>
+    <!--商品展示列表  start-->
+    <view class="shopItem">
+      <view class="oneShop lf" wx:for="{{waterPurifier}}">
+        <view class="shopImg">
+          <image src="{{item.shopImg}}"></image>
+          <view class="youhuijuan" style="background-image:url('https://www.chuanshoucs.com/ServerImg/2018-04-18/9c5f5179-947a-4f10-b159-202384aaf17e.png');">
+            <view class="yhjTextt yhjtxt">优惠劵</view>
+            <view class="yhjTextt">{{item.discountMoney}}元</view>
+          </view>
+        </view>
+        <view class="shoptitel">{{item.title}}</view>
+        <view class="shoppriceText">
+          <view class="shoppirce lf">
+            ¥{{item.shopMoneydis}}
+          </view>劵后
+        </view>
+      </view>
+
+    </view>
+    <!--商品展示列表  end-->
+  </view>
+  <!--净水器下滑  end>
+
+  <!-- 酸奶机图 start -->
+  <view class="notice cl">
+    <image src="{{notice1[1].shoptypeimg}}" mode="aspectFill"></image>
+  </view>
+  <!-- 酸奶机图 end -->
+
+  <!--净水器下滑  start-->
+  <view class="WaterMachine">
+    <view class="waterText">
+      <view class="leftText lf">酸奶机</view>
+      <view class="imgsan ri">
+        <image src="/img/sanjiaxin.png"></image>
+      </view>
+      <view class="rigngtext ri"  bindtap='suannai'>更多</view>
+
+    </view>
+    <!--商品展示列表  start-->
+    <view class="shopItem">
+
+  <view class="oneShop lf" wx:for="{{yogurtMachine}}">
+        <view class="shopImg">
+          <image src="{{item.shopImg}}"></image>
+          <view class="youhuijuan" style="background-image:url('https://www.chuanshoucs.com/ServerImg/2018-04-18/9c5f5179-947a-4f10-b159-202384aaf17e.png');">
+            <view class="yhjTextt yhjtxt">优惠劵</view>
+            <view class="yhjTextt">{{item.discountMoney}}元</view>
+          </view>
+        </view>
+        <view class="shoptitel">{{item.title}}</view>
+        <view class="shoppriceText">
+          <view class="shoppirce lf">
+            ¥{{item.shopMoneydis}}
+          </view>劵后
+        </view>
+      </view>
+
+    </view>
+    <!--商品展示列表  end-->
+  </view>
+
+
+  <!-- 破壁机图 start -->
+  <view class="notice cl">
+    <image src="{{notice1[2].shoptypeimg}}" mode="aspectFill"></image>
+  </view>
+  <!-- 破壁机图 end -->
+
+  <!--破壁机  start-->
+  <view class="WaterMachine">
+    <view class="waterText">
+      <view class="leftText lf">破壁机</view>
+      <view class="imgsan ri">
+        <image src="/img/sanjiaxin.png"></image>
+      </view>
+      <view class="rigngtext ri"  bindtap='pobi'>更多</view>
+
+    </view>
+    <!--商品展示列表  start-->
+    <view class="shopItem">
+
+  <view class="oneShop lf" wx:for="{{breaking}}">
+        <view class="shopImg">
+          <image src="{{item.shopImg}}"></image>
+          <view class="youhuijuan" style="background-image:url('https://www.chuanshoucs.com/ServerImg/2018-04-18/9c5f5179-947a-4f10-b159-202384aaf17e.png');">
+            <view class="yhjTextt yhjtxt">优惠劵</view>
+            <view class="yhjTextt">{{item.discountMoney}}元</view>
+          </view>
+        </view>
+        <view class="shoptitel">{{item.title}}</view>
+        <view class="shoppriceText">
+          <view class="shoppirce lf">
+            ¥{{item.shopMoneydis}}
+          </view>劵后
+        </view>
+      </view>
+
+    </view>
+    <!--商品展示列表  end-->
+  </view>
+
+
+  <!-- 洗碗机图 start -->
+  <view class="notice cl">
+    <image src="{{notice1[3].shoptypeimg}}" mode="aspectFill"></image>
+  </view>
+  <!-- 洗碗机图 end -->
+  <!--洗碗机 start-->
+  <view class="WaterMachine">
+    <view class="waterText">
+      <view class="leftText lf">洗碗机</view>
+      <view class="imgsan ri">
+        <image src="/img/sanjiaxin.png"></image>
+      </view>
+      <view class="rigngtext ri"  bindtap='xiwan'>更多</view>
+
+    </view>
+    <!--商品展示列表  start-->
+    <view class="shopItem">
+
+  <view class="oneShop lf" wx:for="{{dishes}}">
+        <view class="shopImg">
+          <image src="{{item.shopImg}}"></image>
+          <view class="youhuijuan" style="background-image:url('https://www.chuanshoucs.com/ServerImg/2018-04-18/9c5f5179-947a-4f10-b159-202384aaf17e.png');">
+            <view class="yhjTextt yhjtxt">优惠劵</view>
+            <view class="yhjTextt">{{item.discountMoney}}元</view>
+          </view>
+        </view>
+        <view class="shoptitel">{{item.title}}</view>
+        <view class="shoppriceText">
+          <view class="shoppirce lf">
+            ¥{{item.shopMoneydis}}
+          </view>劵后
+        </view>
+      </view>
+
+    </view>
+    <!--商品展示列表  end-->
+  </view>
+
+
+
+  <!-- 机器人图 start -->
+  <view class="notice cl">
+    <image src="{{notice1[4].shoptypeimg}}" mode="aspectFill"></image>
+  </view>
+  <!-- 机器人图 end -->
+  <!--机器人 start-->
+  <view class="WaterMachine">
+    <view class="waterText">
+      <view class="leftText lf">机器人</view>
+      <view class="imgsan ri">
+        <image src="/img/sanjiaxin.png"></image>
+      </view>
+      <view class="rigngtext ri" bindtap='jiqi'>更多</view>
+
+    </view>
+    <!--商品展示列表  start-->
+    <view class="shopItem">
+
+  <view class="oneShop lf" wx:for="{{Robot}}">
+        <view class="shopImg">
+          <image src="{{item.shopImg}}"></image>
+          <view class="youhuijuan" style="background-image:url('https://www.chuanshoucs.com/ServerImg/2018-04-18/9c5f5179-947a-4f10-b159-202384aaf17e.png');">
+            <view class="yhjTextt yhjtxt">优惠劵</view>
+            <view class="yhjTextt">{{item.discountMoney}}元</view>
+          </view>
+        </view>
+        <view class="shoptitel">{{item.title}}</view>
+        <view class="shoppriceText">
+          <view class="shoppirce lf">
+            ¥{{item.shopMoneydis}}
+          </view>劵后
+        </view>
+      </view>
+
+    </view>
+    <!--商品展示列表  end-->
+  </view>
+
+
+  <!-- 护理机图 start -->
+  <view class="notice cl">
+    <image src="{{notice1[5].shoptypeimg}}" mode="aspectFill"></image>
+  </view>
+  <!-- 护理机图 end -->
+  <!--护理机 start-->
+  <view class="WaterMachine">
+    <view class="waterText">
+      <view class="leftText lf">护理机</view>
+      <view class="imgsan ri">
+        <image src="/img/sanjiaxin.png"></image>
+      </view>
+      <view class="rigngtext ri"  bindtap='huli'>更多</view>
+
+    </view>
+    <!--商品展示列表  start-->
+    <view class="shopItem">
+
+  <view class="oneShop lf" wx:for="{{Nursing}}">
+        <view class="shopImg">
+          <image src="{{item.shopImg}}"></image>
+          <view class="youhuijuan" style="background-image:url('https://www.chuanshoucs.com/ServerImg/2018-04-18/9c5f5179-947a-4f10-b159-202384aaf17e.png');">
+            <view class="yhjTextt yhjtxt">优惠劵</view>
+            <view class="yhjTextt">{{item.discountMoney}}元</view>
+          </view>
+        </view>
+        <view class="shoptitel">{{item.title}}</view>
+        <view class="shoppriceText">
+          <view class="shoppirce lf">
+            ¥{{item.shopMoneydis}}
+          </view>劵后
+        </view>
+      </view>
+
+    </view>
+    <!--商品展示列表  end-->
+  </view>
+
+</scroll-view>
+
+
+
+
+
+<!--最新消息  end-->

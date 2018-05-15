@@ -1,0 +1,9 @@
+.b{display: block;padding-right:30rpx;width: 100%}
+view{background: white ; overflow: hidden}
+.a{padding: 0 30rpx;}
+.w2 image{width: 35rpx;height: 35rpx;margin-right:20rpx} 
+.w1 image{width: 30rpx;height: 30rpx;margin-right:20rpx} 
+.ww{padding:30rpx;border-top: 1px solid rgb(242,242,242);}
+.ss{color: rgb(156,156,156);padding:30rpx}
+.sa{padding-bottom: 77rpx}
+.sc{border-bottom: 1px solid rgb(242,242,242);}

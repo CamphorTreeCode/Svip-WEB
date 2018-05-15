@@ -1,0 +1,61 @@
+<!--pages/Product/Product.wxml-->
+<!--搜索 start-->
+<view class="pageTop">
+<view class="weui-search-bar">
+  <view class="weui-search-bar__form">
+    <view class="weui-search-bar__box">
+      <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+      <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+      <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+        <icon type="clear" size="14"></icon>
+      </view>
+    </view>
+    <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+      <icon class="weui-icon-search" type="search" size="14"></icon>
+      <view class="weui-search-bar__text">搜索您的商品</view>
+    </label>
+  </view>
+  <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">搜索</view>
+</view>
+<!--搜索 end -->
+<!--选择栏 start  -->
+<scroll-view class="" scroll-x="true" class="tab-h topSelect" scroll-left="{{scrollLeft}}">
+  <view wx:for="{{selectValue}}" class="tab-item {{currentTab==index?'active':''}} boxCenter" data-current="{{index}}" catchtap="swichNav" >
+    <view class="itemImg box lf">
+      <image src="{{item.selectFalg?item.img:item.selectImg}}"></image>
+    </view>
+    <view class="itemtext lf">{{item.text}}</view>
+  </view>
+</scroll-view>
+</view>
+<swiper class="tab-content" current="{{currentTab}}" duration="300" bindchange="switchTab" style="height:{{260*(productArr.length/2)}}px">
+  <swiper-item wx:for="{{[0,1,2,3,4,5]}}">
+    <scroll-view scroll-y="true" class="scoll-h">
+      <block wx:for="{{productArr}}" wx:key="*this">
+        <!--每个商品 start  -->
+        <view class="shopList lf" catchtap='shopDetails'>
+          <view class="topImg">
+              <image mode="aspectFill" src="{{item.shopImg}}"></image>
+              <view class="youhuijuan" style="background-image:url('https://www.chuanshoucs.com/ServerImg/2018-04-18/9c5f5179-947a-4f10-b159-202384aaf17e.png');">
+               <view class="yhjTextt yhjtxt">优惠劵</view>
+                <view class="yhjTextt">{{item.discountMoney}}元</view>
+          </view>
+            </view>
+       
+          <view class="centerTitle">
+            <view class="centerTypeImg lf boxCenter">
+              <image src="{{item.typeImg==1?'/img/type/taobao.png':'/img/type/tianmao.png'}}"></image>
+            </view>
+          <span class="titleText"> {{item.title}}</span>
+          </view>
+          <view class="bottomMoney">
+             <view class="textMoney lf">¥519</view>
+             <view class="wentext lf">劵后</view>
+          </view>
+        </view>
+        <!--每个商品 end  -->
+      </block>
+    </scroll-view>
+  </swiper-item>
+</swiper>
+<!--右边下拉刷新  end-->

@@ -1,0 +1,79 @@
+<!--pages/allOrder/allOrder.wxml-->
+<!--页面头部浏览器定位-->
+<view class='fixed'>
+  <!--时间插件-->
+  <view class='data'>
+  <text>{{year}}-{{month}}-{{day}}</text>
+
+  <text class='switchover' bindtap="translate">切换时间</text>
+  </view>
+
+  <!--订单属性-->
+  <view class='propertyList'>
+      <view class='property first'>
+          
+          <image src='/img/performance/quanbu.png '></image>
+          <text>订单号</text>
+      </view>
+      <view class='property second'>
+          
+          <image src='/img/performance/gouwu.png  '></image>
+          <text>商品名称</text>
+      </view>
+      <view class='property third'>
+          <image src='/img/performance/jine.png '></image>
+          <text>金额</text>
+      </view>
+  </view>
+</view>
+<!--滚动窗口-->
+<scroll-view style='height:100vh' scroll-y="true" bindscrolltolower='scrolltolower' scroll-top="{{scrollTop.scroll_top}}" bindscroll="scrollTopFun" scroll-with-animation="true" >
+    <!--撑出浏览器定位的空间-->
+    <view style='height:200rpx;'></view>
+  <!--内容列表-->
+  <view class='valueList' wx:for="{{valueList}}"  wx:for-item="item">
+      <view class='value first'>
+          <view>{{item.orderNumber}}</view>
+      </view>
+      <view class='value second'>
+        <text>{{item.orderName}}</text>
+      </view>
+      <view class='value third'>
+        <text>￥{{item.orderMoney}}</text>券后
+      </view>
+  </view>
+</scroll-view>
+
+<!--地址插件-->
+ <view class="animation-element-wrapper" animation="{{animation}}" style="visibility:{{show ? 'visible':'hidden'}}" bindtap="hiddenFloatView" data-id="444">
+     <view class="animation-element" catchtap="nono">
+        <text class="left-bt" catchtap="hiddenFloatView" data-id="555">取消</text>
+        <text class="right-bt" catchtap="hiddenFloatView" data-id="666">确定</text>
+          <view class="line"></view> 
+
+        <picker-view indicator-style = "height: 50rpx;" value="{{value}}" bindchange="bindChange" catchtap="nono">
+        <!--年-->
+        <picker-view-column>
+           <view wx:for="{{years}}" wx:for-item="item" wx:key="">
+             {{item}}
+          </view>
+        </picker-view-column>
+        <!--月-->
+        <picker-view-column>
+          <view wx:for="{{months}}"  wx:for-item="item" wx:key="">
+            {{item}}
+          </view>
+        </picker-view-column>
+        <!--日-->
+        <picker-view-column>
+          <view wx:for="{{days}}" wx:key="">
+            {{item}}
+          </view>
+        </picker-view-column>
+        </picker-view>
+    </view>
+  </view>
+<!--跳转到顶部-->
+<view class='goTop'  wx:if="{{scrollTop.goTop_show}}" catchtap="goTopFun">
+     <image src='/img/performance/890428779831238423.png '></image>
+</view>

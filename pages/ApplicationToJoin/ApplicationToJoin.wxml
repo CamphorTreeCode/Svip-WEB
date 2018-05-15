@@ -1,0 +1,65 @@
+<!--pages/ApplicationToJoin/ApplicationToJoin.wxml-->
+<!--项目介绍-->
+<view class='projectIntroduction title'>
+    <image src='/img/ApplicationToJoin/xiangmuguanli@2x.png'></image>
+    <text>项目介绍</text>
+</view>
+<!--banner图展示-->
+<view class='banner'>
+   <image src='https://www.chuanshoucs.com/ServerImg/2018-04-13/511cdd82-5110-4e45-95f2-d892acfc6886.jpg'></image>
+</view>
+<!--文本展示-->
+<view class='text'>
+   <text>
+      在西方经济学中，分销的含义是建立销售渠道的意思，根据著名的营销大师菲利普·科特勒的定义，分销渠道又或者叫营销渠道(Marketing Channel)，是指某种商品(Commodity)或服务(Service)从生产者(Producer)向消费者(Consumer)转移的过程中，取得这种商品、服务所有权帮助所有权转移所有企业和个人。
+   </text>
+</view>
+<form bindsubmit='formSubmit'>
+<view class='apply'>
+  <!--申请加入-->
+  <view class='applyToJoin title'>
+      <image src='/img/ApplicationToJoin/jiarujiazu@2x.png '></image>
+      <text>申请加入</text>
+  </view>
+  <!--姓名输入框-->
+  <view class='formProperty'>
+      <text>姓\t名\t\t：</text>
+      <input type='text' placeholder='输入你的姓名'></input> 
+      
+  </view>
+  <!--消费平台-->
+  <view class='formProperty platform' bindtap='choosePlatform'>
+      <view class='property'>消费平台（可多选）</view>
+      <text>{{platform}}</text>
+      <image src='/img/ApplicationToJoin/498336855345553797.png '></image>  
+  </view>
+  <!--订单号-->
+  <view class='formProperty'>
+      <text>订单号：</text>
+      <input type='text' placeholder='请输入订单号'></input>  
+  </view>
+  <!--联系电话-->
+  <view class='formProperty'>
+      <text>联系电话：</text>
+      <input type='text' placeholder='请输入您的联系方式'></input> 
+  </view>
+  <!--申请理由-->
+  <view class='formProperty applyReasontext'>
+      <view class='property'>申请理由</view>
+  </view>
+  <view class='applyReason'>
+       <textarea placeholder='请填写你的加盟理由'></textarea>
+  </view>
+  <!--提交按钮-->
+  <view class='submitView'>
+  <button class='submit' form-type='submit'>提交审核</button>
+  </view>
+</view>
+</form>
+<!--等待中-->
+<view class='wait'>
+   <view class='image'><image src='/img/ApplicationToJoin/600512266550061969.png '></image></view>
+   <view class='textOut'>
+    <view class='text'>审核中</view>
+   </view>
+</view>

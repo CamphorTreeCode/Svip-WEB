@@ -1,0 +1,26 @@
+<!--pages/svipLogin/svipLogin.wxml-->
+<form  bindsubmit="formSubmit">
+<!--头部logo-->
+<view class='head'>
+     <image src='/img/svipLogin/sviplogo.png '></image>  
+</view>
+<!--用户名-->
+<view class='formProperty'>
+     <image src='/img/svipLogin/yonghu.png '></image>
+     <input placeholder='请输入用户名' name='svipName' value='{{svipName}}' bindblur="inputchange"></input>
+</view>
+<!--密码-->
+<view class='formProperty'>
+     <image src='/img/svipLogin/mina.png '></image>
+     <input placeholder='请输入密码' name='password' value='{{pwd}}'></input>
+</view>
+<!--提交按钮-->
+  <view class='submitView'>
+  <button class='submit' bindtap='login' form-type='submit'>登录</button>
+  </view>
+  </form>
+<!--广告栏位-->
+<view class='advertising'>
+  <view>本小程序由传手开发平台提供技术支持</view>
+  <view>电话热线：021-5763-0970</view>
+</view>

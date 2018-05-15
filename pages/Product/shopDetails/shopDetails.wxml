@@ -1,0 +1,57 @@
+<!--pages/Product/shopDetails/shopDetails.wxml-->
+<!--轮播图 start  -->
+
+
+<swiper class="swiper" indicator-active-color="#FD7073" indicator-dots="true" autoplay="true" interval="5000" duration="1000"  circular="true"   indicator-color="#fff" >
+  <block wx:for="{{movies}}" wx:for-index="index">
+    <swiper-item>
+      <image src="{{item.url}}" class="slide-image" />
+    </swiper-item>
+  </block>
+</swiper>
+<!--轮播图 end  -->  
+
+<!--商品的标题  -->
+<view class="topTitle">
+  <view class="titleText">
+    <view class="shopTextImg">
+      <image src="{{shopDetails[0].typeImg==1?'/img/type/taobao.png':'/img/type/tianmao.png'}}"></image>
+    </view>
+    <span class="spantext">{{shopDetails[0].title}}</span>
+  </view>
+ <view class="centerShlfopMoney">
+    <view class="leftMoney lf">劵后<span>¥{{shopDetails[0].shopMoneydis-shopDetails[0].discountMoney}} </span> </view>
+     <view class="rightMoney ri">原价¥{{shopDetails[0].shopMoneydis}} </view>
+  </view> 
+
+  <view class='bottomLable cl box'>
+   <view class="lableBody box" wx:for="{{reasons}}">
+    <view class="lableLine "></view>
+    <view class="lableText ">{{item.text}}</view>
+   </view>
+  </view>
+</view>
+<view class="youhuiquan">
+    <image  src="/img/type/quan.png"></image>
+    <view class="youhuiNumber">
+    <view class="number lf">￥<span>300</span></view>    
+    <view class="youhuiText">优惠卷</view>
+    <view class="youhuiCopy">可一键复制</view>
+    </view>
+
+    <view class="immediately">立即领券</view>
+</view>
+<!--sku属性  start-->
+<!--sku属性  end>
+<!--图片详情  -->
+<view class="bottomDetatils">
+<view class="listImg" wx:for="{{imgarr}}">
+  <image src="{{item.img}}" mode="widthFix"></image>
+  </view>
+</view>
+<!--固定底部沒做-->
+<view class="bottomfiex">
+  <view class="homeImg lf boxCenter"><image src="/img/type/home@2x.png"></image></view>
+  <view class="zhuanfa lf boxCenter">转发</view>
+  <view class="copyCode lf boxCenter">立即复制</view>
+</view>

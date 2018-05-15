@@ -1,0 +1,10 @@
+view{background: white;}
+.a{ text-align: center;}
+.operation{height: 180rpx;border-top: 1px solid rgb(243,243,243);padding-top: 30rpx}
+.left{width: 30%;overflow: hidden;float: left}
+.left image{width: 70%;height: 140rpx;margin-left: 20%}
+.right{width: 70%;float: left;text-align: initial}
+.right image{width: 30rpx;height: 20rpx;max-height: 100%;max-width: 100%;}
+.eys{color: rgb(251,114,121)}
+.time{color: rgb(161,161,161)}
+.name{font-weight: bold}

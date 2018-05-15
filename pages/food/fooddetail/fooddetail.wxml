@@ -1,0 +1,10 @@
+<view wx:for="{{food}}" wx:for-item="item" wx:for-index="index" class='aw' class='sss'>
+  <view class='operation aw' data-path='{{item.path}}' data-index='{{index}}' bindtap='operation'>
+  <view class='left'><image src='{{item.image}}'></image></view>
+  <view class='right'>
+   <text class='name'>{{item.name}}</text>
+   <view ><image src='{{item.ul}}'></image><text class='eys'>{{item.age}}</text></view>
+    <text class='time'>{{item.time}}</text>
+  </view>
+   </view>
+</view>

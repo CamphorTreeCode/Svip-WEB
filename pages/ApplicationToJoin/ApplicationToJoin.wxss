@@ -1,0 +1,35 @@
+/* pages/ApplicationToJoin/ApplicationToJoin.wxss */
+/*项目介绍申请加入通用*/
+page{ background-color: #fff;}
+.title{height:100rpx; line-height: 100rpx;color: #333; font-size: 1.1rem;}
+.title image{  width: 40rpx; height: 40rpx;  vertical-align: middle; margin: 30rpx 20rpx 30rpx 30rpx;}
+/*项目介绍*/
+.projectIntroduction{border-top: 1px solid #f2f2f2;}
+/*banner图*/
+.banner{ height: 350rpx;}
+.banner image{ width: 100%; height: 100%;}
+/*文本介绍*/
+.text{ color: #999; padding: 0rpx 1rem; font-size:0.9rem; background-color: #fff; padding-bottom: 30rpx;}
+/*申请加入*/
+.applyToJoin{border-bottom: 1px solid #f2f2f2;}
+/*表单属性*/
+.formProperty{height:100rpx; line-height: 100rpx; background-color: #fff; border-bottom: 1px solid #f2f2f2; padding:0 5%; color: #333;}
+.formProperty text{ float: left; }
+.formProperty input{height: 100rpx;}
+/*平台选择图标*/
+.platform view{ float: left;}
+.platform text{ margin-left: 1rem; color: #999;}
+.platform image{ width:40rpx; height: 40rpx; margin-top:5%; float: right; margin-right: -3%;}
+/*申请原因*/
+.applyReasontext{ border: none;}
+.applyReason{ padding: 0 5% 20rpx; border-bottom: 1rpx solid #f2f2f2;}
+.applyReason textarea{ width: 100%; color: #666;}
+/*提交按钮*/
+.submitView{ background-color: #fff; padding: 50rpx 2%;}
+.submit{ width: 96%;  background-color:#ff6269; border-radius: 20rpx; color: #fff;}
+/*等待页面的图标展示*/
+.wait{ padding: 100rpx 0rpx;}
+.wait .image{ width:100rpx; height: 100rpx; margin: 0 auto;}
+.wait .image image{ width: 100%; height: 100%;}
+.wait .textOut{ float: left; position: relative; left: 50%; margin-top: 10rpx;}
+.wait .textOut .text{ position: relative; left: -50%; color:#ff6269; font-size: 1.1rem;}

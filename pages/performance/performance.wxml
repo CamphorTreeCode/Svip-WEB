@@ -1,0 +1,46 @@
+<!--pages/performance/performance.wxml-->
+
+<view class='headOut'>
+    <!--头部红色框-->
+    <view class='head'>
+       <!--本月销售额-->
+       <view class='externalText'>
+        <view class='inner'>本月销售额（元）</view>
+       </view>
+       <!--数字-->
+       <view class='clear'></view>
+       <view class='externalNumber'>
+        <view class='inner'>265</view>
+       </view>
+       <view class='clear'></view>
+     <!--详细信息按钮-->
+     <view class='detailsList'>
+      <!--本月访问量-->
+      <view class='details'>
+          <view><image src='/img/performance/yanjing.png '></image></view>
+          <view>本月访问量</view>
+          <view>3</view>
+      </view>
+      <!--本月订单数-->
+       <view class='details'>
+          <view><image src='/img/performance/dingdan.png '></image></view>
+          <view>本月订单数</view>
+          <view>2</view>
+      </view>
+       <!--交易人数-->
+       <view class='details'>
+          <view><image src='/img/performance/ji.png '></image></view>
+          <view>交易人数</view>
+          <view>3</view>
+      </view>
+     </view>
+
+
+    </view>
+</view>
+<!--全部订单-->
+<view class='formProperty orderAll' bindtap='allOrder'>
+      <image src='/img/performance/quanbu.png ' class='icon'></image>
+      <view class='property'>全部订单</view>
+      <image src='/img/ApplicationToJoin/498336855345553797.png ' class='arrows'></image>  
+</view>
