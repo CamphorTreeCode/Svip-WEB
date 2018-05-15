@@ -6,12 +6,12 @@
 </view>
 <!--banner图展示-->
 <view class='banner'>
-   <image src='https://www.chuanshoucs.com/ServerImg/2018-04-13/511cdd82-5110-4e45-95f2-d892acfc6886.jpg'></image>
+   <image src='{{franchiseDetailsImg}}'></image>
 </view>
 <!--文本展示-->
 <view class='text'>
    <text>
-      在西方经济学中，分销的含义是建立销售渠道的意思，根据著名的营销大师菲利普·科特勒的定义，分销渠道又或者叫营销渠道(Marketing Channel)，是指某种商品(Commodity)或服务(Service)从生产者(Producer)向消费者(Consumer)转移的过程中，取得这种商品、服务所有权帮助所有权转移所有企业和个人。
+      {{franchiseDetailsContent}}
    </text>
 </view>
 <form bindsubmit='formSubmit'>
