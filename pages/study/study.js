@@ -1,31 +1,41 @@
+
 var app = getApp();
 
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
-      learningList:'',
-  },
+
+      top:[],
+      },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var learn = this;
+    var top = this;
+    var lxy = [];
     wx.request({
       url: app.globalData.appUrl + 'WXLearning/findLearningList',
       header: {
         'content-type': 'application/x-www-form-urlencoded', // 默认值
         xcxuser_name: "xcxuser_name"
       },
-
+      
       success: function (res) {
-        console.info(res);
-      }
+        var toplist=[]
+        for(var i=0;i<res.data.length;i++){
+          toplist.push(res.data[i])
+        }
+        top.setData({
+          top: toplist
 
+        })
+        console.info(top.data.top)
+      } 
     })
+    
   },
 
   /**
