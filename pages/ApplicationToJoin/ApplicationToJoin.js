@@ -1,3 +1,47 @@
+//表单验证
+function yanzheng(franchiseList) {
+  if (franchiseList.franchiseName == '') {
+    wx.showToast({
+      title: '请填写姓名',
+      icon: 'none',
+      duration: 2000
+    })
+    return false;
+  }
+  if (franchiseList.franchiseConsumption == '') {
+    wx.showToast({
+      title: '请选择消费平台',
+      icon: 'none',
+      duration: 2000
+    })
+    return false;
+  }
+  if (franchiseList.franchiseOrderNmuber == '') {
+    wx.showToast({
+      title: '请填写订单号',
+      icon: 'none',
+      duration: 2000
+    })
+    return false;
+  }
+  if (franchiseList.franchisePhone == '') {
+    wx.showToast({
+      title: '请填写联系电话',
+      icon: 'none',
+      duration: 2000
+    })
+    return false;
+  }
+  if (franchiseList.franchiseApplyReason == '') {
+    wx.showToast({
+      title: '请填写申请理由',
+      icon: 'none',
+      duration: 2000
+    })
+    return false;
+  }
+}
+
 // pages/ApplicationToJoin/ApplicationToJoin.js
 var app = getApp();
 Page({
@@ -27,7 +71,7 @@ Page({
         xcxuser_name: "xcxuser_name"
       },
       success: function (res) {
-        // console.info(res);
+        console.info(res);
         // console.info(res.data[0].franchisedetailscontent);
         franchiseDetails.setData({
           franchiseDetailsContent: res.data[0].franchisedetailscontent,
@@ -85,7 +129,8 @@ Page({
   onShareAppMessage: function () {
 
   },
-  choosePlatform: function () {
+  choosePlatform: function (e) {
+    console.info(e.target.dataset.value)
     wx.navigateTo({
       url: '/pages/platform/platform',
     })
@@ -94,6 +139,10 @@ Page({
   },
   formSubmit: function (e) {
     console.info('触发事件')
-    console.info(e)
+    console.info(e.target.dataset)
+    var that = this;
+
+    
+
   },
 })

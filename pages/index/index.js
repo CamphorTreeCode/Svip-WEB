@@ -23,11 +23,6 @@ Page({
     ],
     //类目展示图
     notice1:'',
-    notice2:'',
-    notice3:'',
-    notice4:'',
-    notice5:'',
-    notice6:'',
     
     // 净水器
     waterPurifier: [
@@ -43,7 +38,9 @@ Page({
         shopImg: 'https://www.chuanshoucs.com/ServerImg/2018-04-18/98075ffa-6897-475c-83e0-b334dab81be6.jpg',
         discountMoney: 200,
         shopMoneydis: 298,
-      }],
+      }
+
+    ],
     //酸奶机
     yogurtMachine: [
       {
@@ -156,7 +153,7 @@ Page({
       }
     })
 
-    //首页六张展示图
+    //首页六张类目及其展示图
     wx.request({
       url: app.globalData.appUrl + 'WXShop/findHomePageShopImg',
       header: {
@@ -171,10 +168,7 @@ Page({
         })
       }
     })
-
-
     //  获取系统的高度
-
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

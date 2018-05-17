@@ -20,7 +20,7 @@ function login(that){
           var users = JSON.stringify(user)
           
           wx.request({
-            url: app.globalData.appUrl + 'user/addUser', //仅为示例，并非真实的接口地址
+            url: app.globalData.appUrl + 'WXUser/addUser', //仅为示例，并非真实的接口地址
             data: users,
             header: {
               'content-type': 'application/json' // 默认值
@@ -39,7 +39,48 @@ function login(that){
   })
 /**传用户数据 */
 }
+
+//获取openid
+function getOpenid() {
+  // 登录
+  wx.login({
+    success: res => {
+      var app = getApp()
+      try {
+        var value = wx.getStorageSync('openid')
+        if (value) {
+
+        } else {
+          wx.request({
+            url: app.globalData.url + 'WxUser/getOpenid', //仅为示例，并非真实的接口地址
+            data: { jscode: res.code },
+            method: "get",
+            header: {
+              // 'content-type': 'application/x-www-form-urlencoded' // 默认值
+              'content-type': 'application/json', // 默认值
+
+            },
+            success: function (res) {
+              console.log(res)
+
+              try {
+                wx.setStorageSync('openid', res.data.openId)
+              } catch (e) {
+              }
+            }
+
+          })
+        }
+      } catch (e) {
+        // Do something when catch error
+      }
+
+
+    }
+  })
+}
+
 module.exports = {
   login: login,
-
+  getOpenid: getOpenid,
 }

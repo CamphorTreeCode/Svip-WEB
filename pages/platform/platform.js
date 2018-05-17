@@ -7,16 +7,16 @@ Page({
   data: {
     platform: [
        { platformImg: '/img/ApplicationToJoin/tianmao@2x.png', platformName: '天猫' },
-       { platformImg: '/img/ApplicationToJoin/jingdong@2x.png ', platformName: '京东' },
+       //{ platformImg: '/img/ApplicationToJoin/jingdong@2x.png ', platformName: '京东' },
        { platformImg: '/img/ApplicationToJoin/taobao@2x.png ', platformName: '淘宝' },
-       { platformImg: '/img/ApplicationToJoin/suningyigou@2x.png ', platformName: '苏宁易购' },
-       { platformImg: '/img/ApplicationToJoin/weishangyouxuan@2x.png ', platformName: '微商优选' },
-       { platformImg: '/img/ApplicationToJoin/jumeiyoupin@2x.png ', platformName: '聚美优品' },
-       { platformImg: '/img/ApplicationToJoin/yihaodian@2x.png ', platformName: '1号店' },
-       { platformImg: '/img/ApplicationToJoin/xiaoxiong@2x.png ', platformName: '网易考拉海购' },
-       { platformImg: '/img/ApplicationToJoin/aixin@2x.png  ', platformName: '拼多多' },
+       //{ platformImg: '/img/ApplicationToJoin/suningyigou@2x.png ', platformName: '苏宁易购' },
+       //{ platformImg: '/img/ApplicationToJoin/weishangyouxuan@2x.png ', platformName: '微商优选' },
+       //{ platformImg: '/img/ApplicationToJoin/jumeiyoupin@2x.png ', platformName: '聚美优品' },
+       //{ platformImg: '/img/ApplicationToJoin/yihaodian@2x.png ', platformName: '1号店' },
+       //{ platformImg: '/img/ApplicationToJoin/xiaoxiong@2x.png ', platformName: '网易考拉海购' },
+       //{ platformImg: '/img/ApplicationToJoin/aixin@2x.png  ', platformName: '拼多多' },
        ],
-    check: ['none', 'none', 'none', 'none', 'none', 'none', 'none', 'none', 'none']
+    check: ['none', 'none']
   
   },
 
@@ -98,7 +98,7 @@ Page({
     
     /*单选样式*/
     var index = e.currentTarget.dataset.index
-    var checkList = ['none', 'none', 'none', 'none', 'none', 'none', 'none', 'none', 'none']
+    var checkList = ['none', 'none']
     if (this.data.check[index] == 'none') {
       checkList[index] = 'block'
       console.info()

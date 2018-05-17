@@ -1,4 +1,6 @@
 // pages/my/my.js
+
+var app = getApp();
 Page({
 
   /**

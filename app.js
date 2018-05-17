@@ -86,6 +86,7 @@ App({
         }
       }
     })
+    
 
 
     //全局保存高宽度 
@@ -100,6 +101,23 @@ App({
 
     console.log("app.js end")
   },
+  getOpenId: function () {
+    console.log("獲取opoenid")
+    var that = this
+    check.getLoginCheck(that)
+  },
+  returnOpenId: function () {
+    var openid = wx.getStorageSync('openid')
+    if (openid) {
+      console.log("有openid")
+    } else {
+      console.log("沒有openid")
+      app.getOpenId();
+      openid = wx.getStorageSync('openid')
+    }
+    return openid
+  },
+
   globalData: {
     userInfo: null,
     winWidth: 0,

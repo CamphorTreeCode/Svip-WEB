@@ -1,3 +1,4 @@
+
 <view class='header' wx:for="{{top}}" wx:for-item="item" >
     <view class='top'>
         <image src='{{item.image}}'></image>
@@ -7,6 +8,7 @@
         </view>
         <view class='a2'><text>{{item.time}}</text></view>
     </view>
+
     <view class='bottom'>
       <view class='b_c'><text>{{item.name}}</text></view>
       <view class='b_b'><text>{{item.detail}}</text></view>
