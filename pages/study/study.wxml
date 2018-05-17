@@ -22,37 +22,12 @@
             <image src="{{lxy.learningworldimgurl}}"></image>
             </i>
       </view>
-        
-      <view class='b_d'><image src='https://www.chuanshoucs.com/ServerImg/2018-05-11/32c140a8-fa11-4179-837e-a406e56ecfd5.png'></image>
-      <text>{{item.learningworldbrowse}}</text>
-      <image  class='b_aa' src='https://www.chuanshoucs.com/ServerImg/2018-05-11/2c71c135-0189-4520-9bbf-77ebac0b8648.png'></image>
-      <text>{{item.learningworldfabulous}}</text></view>
+      <!--点赞与浏览量-->
+      <view class='b_d'>
+        <image src='https://www.chuanshoucs.com/ServerImg/2018-05-11/32c140a8-fa11-4179-837e-a406e56ecfd5.png'></image>
+        <text>{{item.learningworldbrowse}}</text>
+        <image  class='b_aa' src='https://www.chuanshoucs.com/ServerImg/2018-05-11/2c71c135-0189-4520-9bbf-77ebac0b8648.png'></image>
+        <text>{{item.learningworldfabulous}}</text></view>
     </view>
+
 </view>
-
-
-
-<!-- 图片展示-->
-<!-- <view class='header' wx:for="{{bottom}}" >
-    <view class='top'>
-        <image src='https://www.chuanshoucs.com/ServerImg/2018-05-11/705e081f-a6fb-4bcd-9711-8f1a1092a29d.png'></image>
-        <view class='a'>
-          <text class='a1'>超级VIP官方</text>
-          <text class='c1'>Super VIP</text>
-        </view>
-        <view class='a2'><text>{{it.time}}</text></view>
-    </view>
-    <view class='bottom'>
-      <view class='b_c'><text>{{it.name}}</text></view>
-      <view class='b_b'><text>{{it.detail}}</text></view>
-      <view class='b_a' bindtap='lujing'><text>查看详情</text></view>
-
-
-      <view class='aaa  qqqq'  wx:for="{{it.url}}" wx:for-item="im">
-            <image src="{{im.image}}"></image>
-      </view>
-
-      
-      <view class='b_d'><image src='{{it.yan}}'></image><text>{{it.eys}}</text><image  class='b_aa' src='{{it.fabulous}}'></image><text>{{it.zan}}</text></view>
-    </view>
-</view> -->
