@@ -6,25 +6,29 @@ Page({
    * 页面的初始数据
    */
   data: {
-    top: [{ }],
-    
+    top:{},
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var top = this;
+    console.info(options)
+    var that = this;
+    var lxy = [];
     wx.request({
-      url: app.globalData.appUrl + 'WXLearning/findLearningDetails',
+      url: app.globalData.appUrl + 'WXLearning/findLearningDetails?learningWorldId='+options.lid+'',
       header: {
         'content-type': 'application/x-www-form-urlencoded', // 默认值
         xcxuser_name: "xcxuser_name"
       },
-      
       success: function (res) {
-        
+        console.info(res)
+        that.setData({
+          top:res.data
+        })
       }
+      
     })
   },
 

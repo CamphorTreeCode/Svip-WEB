@@ -8,7 +8,7 @@
       <text>Super VIP</text>
     </view>
     <view class='a2'>
-      <text>{{item.time}}</text>
+      <text>{{item.learningworldcreattime}}</text>
     </view>
   </view>
 
@@ -17,27 +17,38 @@
 
     <!-- 标题和内容 -->
     <view class='b_c'>
-      <text>{{item.name}}</text>
+      <text>{{item.learningworldtitle}}</text>
     </view>
     <view class='b_b'>
-      <text>{{item.detail}}</text>
+      <text>{{item.learningworldcontent}}</text>
     </view>
 
     <!--视频区-->
-    <view class='img_a'>
+    <!-- <view class='img_a'> -->
       <!-- <view>{{item.url}}</view>  -->
-      <view class='aaa'></view>
-      <video src='/img/study/movie.ogg' show-fullscreen-btn='false'></video>
+      <!-- <view class='aaa'></view>
+      <video src='/img/study/movie.ogg' show-fullscreen-btn='false'></video> -->
       <!-- <image class='sww' src='{{icon}}'></image>
         <image class='saa' src='{{item.url}}'></image> -->
-    </view>
+    <!-- </view> -->
+
+    <view class='img_a' wx:if="{{item.learningworldvideourl!=''}}">
+        <video  src='/img/study/movie.ogg' ></video>
+       </view>
+      <view class='aaa  qqqq' wx:if="{{item.learningworldvideourl==''}}" >
+            <i wx:for="{{item.learningWorldImg}}" wx:for-item="lxy">
+            <image src="{{lxy.learningworldimgurl}}"></image>
+            </i>
+      </view>
 
     <!-- 点赞浏览数据 -->
     <view class='b_d'>
+       <image src='https://www.chuanshoucs.com/ServerImg/2018-05-16/fd5a6720-e9fc-4d03-964a-26e403a6f073.png'></image>
+      <text  style='padding-right:15rpx'>{{item.learningworldbrowse}}</text>
       <image src='https://www.chuanshoucs.com/ServerImg/2018-05-11/32c140a8-fa11-4179-837e-a406e56ecfd5.png'></image>
-      <text>{{item.eys}}</text>
+      <text>{{item.learningworldbrowse}}</text>
       <image class='b_aa' src='https://www.chuanshoucs.com/ServerImg/2018-05-11/2c71c135-0189-4520-9bbf-77ebac0b8648.png'></image>
-      <text>{{item.zan}}</text>
+      <text>{{item.learningworldfabulous}}</text>
     </view>
   </view> 
 
