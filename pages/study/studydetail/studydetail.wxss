@@ -8,7 +8,7 @@ view{background: white}
 .top{border-top: 1px solid rgb(243,243,243);border-bottom: 1px solid rgb(243,243,243);padding: 20rpx 20rpx}
 .a1{font-weight: bold;font-size: 36rpx}
 .a2{display: inline-block;line-height: 100rpx;float:right;color: red}
-.bottom image{width: 100%;border-radius: 8rpx}
+.bottom image{width: 100%;border-radius: 8rpx;width: 31%;height: 220rpx;display: inline-block;margin-left: 15rpx}
 
 
 
@@ -21,11 +21,11 @@ view{background: white}
 .bottom{padding:0 30rpx}
 .b_aa{margin-left: 30rpx}
 .img_a{position: relative}
- .aaa{position: absolute;z-index: 2}
+ .aaa{z-index: 2;width: 100%}
  .sww{z-index: 2;margin: auto}
  video{width: 100%;margin-top: 50rpx;margin-bottom: 30rpx;}
  .bottoma{height: 500rpx;width: 100%;display: flex;}
- .bottoma image{width: 40rpx;height: 40rpx}
+ .bottoma image{width: 40rpx;height: 40rpx;}
  .left_2 {margin-right: 70rpx}
   .bottoma .left{display: inline-block;text-align: center;color: rgb(251,116,124)} 
   .center{margin: auto;display: inline-block}

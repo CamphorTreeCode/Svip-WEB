@@ -15,7 +15,7 @@ Page({
   onLoad: function (options) {
     console.info(options)
     var that = this;
-    var lxy = [];
+    
     wx.request({
       url: app.globalData.appUrl + 'WXLearning/findLearningDetails?learningWorldId='+options.lid+'',
       header: {
@@ -25,10 +25,10 @@ Page({
       success: function (res) {
         console.info(res)
         that.setData({
-          top:res.data
+          top:res.data,
+          
         })
       }
-      
     })
   },
 
