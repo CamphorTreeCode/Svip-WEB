@@ -1,29 +1,58 @@
-<view class='header' wx:for="{{top}}" wx:for-item="item" >
-    <view class='top'>
-        <image src='{{item.image}}'></image>
-        <view class='a'>
-          <text class='a1'>超级VIP官方</text>
-          <text>Super VIP</text>
-        </view>
-        <view class='a2'><text>{{item.time}}</text></view>
+<view class='header' wx:for="{{top}}">
+
+  <!--Logo栏-->
+  <view class='top'>
+    <image src='https://www.chuanshoucs.com/ServerImg/2018-05-11/705e081f-a6fb-4bcd-9711-8f1a1092a29d.png'></image>
+    <view class='a'>
+      <text class='a1'>超级VIP官方</text>
+      <text>Super VIP</text>
     </view>
-    <view class='bottom'>
-      <view class='b_c'><text>{{item.name}}</text></view>
-      <view class='b_b'><text>{{item.detail}}</text></view>
-       <view class='img_a'> 
-       <!-- <view>{{item.url}}</view>  -->
-        <view class='aaa'></view>
-        <video src='{{vedio}}' show-fullscreen-btn='false'></video>
-        <!-- <image class='sww' src='{{icon}}'></image>
+    <view class='a2'>
+      <text>{{item.time}}</text>
+    </view>
+  </view>
+
+  <!--内容栏-->
+  <view class='bottom'>
+
+    <!-- 标题和内容 -->
+    <view class='b_c'>
+      <text>{{item.name}}</text>
+    </view>
+    <view class='b_b'>
+      <text>{{item.detail}}</text>
+    </view>
+
+    <!--视频区-->
+    <view class='img_a'>
+      <!-- <view>{{item.url}}</view>  -->
+      <view class='aaa'></view>
+      <video src='/img/study/movie.ogg' show-fullscreen-btn='false'></video>
+      <!-- <image class='sww' src='{{icon}}'></image>
         <image class='saa' src='{{item.url}}'></image> -->
-       
-       </view> 
-      <view class='b_d'><image src='{{item.yan}}'></image><text>{{item.eys}}</text><image  class='b_aa' src='{{item.fabulous}}'></image><text>{{item.zan}}</text></view>
     </view>
+
+    <!-- 点赞浏览数据 -->
+    <view class='b_d'>
+      <image src='https://www.chuanshoucs.com/ServerImg/2018-05-11/32c140a8-fa11-4179-837e-a406e56ecfd5.png'></image>
+      <text>{{item.eys}}</text>
+      <image class='b_aa' src='https://www.chuanshoucs.com/ServerImg/2018-05-11/2c71c135-0189-4520-9bbf-77ebac0b8648.png'></image>
+      <text>{{item.zan}}</text>
+    </view>
+  </view> 
+
 </view>
+<!-- 点赞浏览图标 -->
 <view class='bottoma'>
-    <view class='center'>
-      <view class='left left_2'><image bindtap='onimg' src='{{zan}}'></image><view>赞一下</view></view>
-  <view class='left'><image bindtap='onimg1' src='{{fenxiang}}'></image><view>分享一下</view></view>
+  <view class='center'>
+    <view class='left left_2'>
+      <image bindtap='onimg' src='https://www.chuanshoucs.com/ServerImg/2018-05-11/2c71c135-0189-4520-9bbf-77ebac0b8648.png'></image>
+      <view>赞一下</view>
     </view>
+    <view class='left'>
+      <image bindtap='onimg1' src='https://www.chuanshoucs.com/ServerImg/2018-05-11/3604a53a-7842-490e-8888-20030d79ccdc.png'></image>
+      <view>分享一下</view>
+    </view>
+  </view>
+
 </view>
