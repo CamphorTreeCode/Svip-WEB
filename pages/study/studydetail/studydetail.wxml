@@ -46,8 +46,10 @@
 <view class='bottoma'>
   <view class='center'>
     <view class='left left_2'>
-      <image bindtap='onimg' src='https://www.chuanshoucs.com/ServerImg/2018-05-11/2c71c135-0189-4520-9bbf-77ebac0b8648.png'></image>
-      <view>赞一下</view>
+      <image bindtap='onimg' src='https://www.chuanshoucs.com/ServerImg/2018-05-11/01ba72ea-867b-4287-82e6-124383fca865.png'></image>
+      <!--// zan: "https://www.chuanshoucs.com/ServerImg/2018-05-11/01ba72ea-867b-4287-82e6-124383fca865.png"灰色图片-->
+      <view v-if="1" style='color:#ccc'>赞一下</view>
+      <!-- <view v-if="0" style='color:#red'>赞一下</view> -->
     </view>
     <view class='left'>
       <image bindtap='onimg1' src='https://www.chuanshoucs.com/ServerImg/2018-05-11/3604a53a-7842-490e-8888-20030d79ccdc.png'></image>

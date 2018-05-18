@@ -4,11 +4,21 @@ Page({
    * 页面的初始数据
    */
   data: {
-    flag:"0",
-    food:[
+    flag: "0",
+    food: [
       {
-        title: "浓汤类", text: "更多", icon: "https://www.chuanshoucs.com/ServerImg/2018-05-11/516e646e-0821-4721-98f3-90b04e90802c.png", image: [{ image: "https://www.chuanshoucs.com/ServerImg/2018-05-11/b1355788-4166-4486-80aa-8bd39c485227.png" }, { image: "https://www.chuanshoucs.com/ServerImg/2018-05-11/9ba14f6c-539f-482a-a8b7-b871c0b7f591.png" }, { image: "https://www.chuanshoucs.com/ServerImg/2018-05-11/f5fe56f7-c113-4f38-af6e-4471f96cc05d.png" }, { image: "https://www.chuanshoucs.com/ServerImg/2018-05-11/afc00479-31b2-4bd5-ad85-7bf62131a2e8.png" }]
+        title: "浓汤类", 
+        text: "更多", 
+        icon: "https://www.chuanshoucs.com/ServerImg/2018-05-11/516e646e-0821-4721-98f3-90b04e90802c.png", 
+        image: [
+          { image: "https://www.chuanshoucs.com/ServerImg/2018-05-11/b1355788-4166-4486-80aa-8bd39c485227.png" }, 
+          { image: "https://www.chuanshoucs.com/ServerImg/2018-05-11/9ba14f6c-539f-482a-a8b7-b871c0b7f591.png" }, 
+          { image: "https://www.chuanshoucs.com/ServerImg/2018-05-11/f5fe56f7-c113-4f38-af6e-4471f96cc05d.png" }, 
+          { image: "https://www.chuanshoucs.com/ServerImg/2018-05-11/afc00479-31b2-4bd5-ad85-7bf62131a2e8.png" }
+        ]
       },
+
+      
       {
         title: "豆浆类", text: "更多", icon: "https://www.chuanshoucs.com/ServerImg/2018-05-11/5a1e0c1e-4201-4dbe-9866-211f6b4a7a2a.png", image: [{ image: "https://www.chuanshoucs.com/ServerImg/2018-05-11/4ea80653-48da-432d-b192-2b23fbebf9c5.png" }, { image: "https://www.chuanshoucs.com/ServerImg/2018-05-11/39d03d2d-6697-4874-97a8-2096dfbb3d6a.png" }, { image: "https://www.chuanshoucs.com/ServerImg/2018-05-11/2b7e1814-b6de-4df6-9a40-01e3875ea963.png" }, { image: "https://www.chuanshoucs.com/ServerImg/2018-05-11/7438519c-cef7-4c62-8f7a-45c9094b2a32.png" }]
       },
@@ -31,13 +41,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    
+
   },
 
 
@@ -45,48 +55,48 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    
+
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-    
+
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-    
+
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    
+
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    
+
   },
 
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-    
+
   },
 
   operation: function (e) {
     var index = e.currentTarget.dataset.index
     console.log(index)
-    if(index==0){
+    if (index == 0) {
       wx.navigateTo({
         url: '/pages/food/fooddetail/fooddetail'
       })
@@ -115,6 +125,6 @@ Page({
 
 
 
-   }
+  }
 
 })

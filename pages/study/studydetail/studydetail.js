@@ -82,7 +82,7 @@ Page({
   },
   onimg:function(){
     this.setData({
-      zan: "https://www.chuanshoucs.com/ServerImg/2018-05-11/01ba72ea-867b-4287-82e6-124383fca865.png"
+    
     })
   },
   onimg1: function () {

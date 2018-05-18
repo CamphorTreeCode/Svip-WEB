@@ -12,14 +12,14 @@ Page({
     movies: [],
     //功能区域  
     functionImg: [
-      { name: "关于我们", url: "/img/guanyuwomen.png" },
-      { name: "产品分类", url: "/img/fenlei.png" },
-      { name: "会员中心", url: "/img/huiyuan.png" },
-      { name: "卡劵中心", url: "/img/youhiquan.png" },
-      { name: "超级食谱", url: "/img/shipin.png" },
-      { name: "申请加盟", url: "/img/jiameng.png" },
-      { name: "中央维修", url: "/img/weixui.png" },
-      { name: "学习天地", url: "/img/xuexi.png" },
+      { name: "关于我们", url: "https://www.chuanshoucs.com/ServerImg/2018-05-16/4b2a7ea1-bf20-4723-9c18-5ee9163c653c.png" },
+      { name: "产品分类", url: "https://www.chuanshoucs.com/ServerImg/2018-05-16/d325f5da-5a0d-4970-9064-094db523c6f3.png" },
+      { name: "会员中心", url: "https://www.chuanshoucs.com/ServerImg/2018-05-16/79b273da-d116-4523-b555-b3eb34626fb2.png" },
+      { name: "卡劵中心", url: "https://www.chuanshoucs.com/ServerImg/2018-05-16/81b8fa09-48d2-4221-b29f-ed170d435976.png" },
+      { name: "超级食谱", url: "https://www.chuanshoucs.com/ServerImg/2018-05-16/c3adb1a4-5274-4036-b0dd-d8fe24d0f7e9.png" },
+      { name: "申请加盟", url: "https://www.chuanshoucs.com/ServerImg/2018-05-16/c9e6baf8-c238-409f-b17e-7d0c60d383c1.png" },
+      { name: "中央维修", url: "https://www.chuanshoucs.com/ServerImg/2018-05-16/fa1cc3c3-8a88-4132-bfa8-b253af000624.png" },
+      { name: "学习天地", url: "https://www.chuanshoucs.com/ServerImg/2018-05-16/b71939c4-970b-41ef-8c63-822269d444c5.png" },
     ],
     //类目展示图
     notice1:'',
