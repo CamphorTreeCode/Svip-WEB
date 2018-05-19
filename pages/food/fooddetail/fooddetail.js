@@ -7,14 +7,7 @@ Page({
    */
   data: {
     leibie:"烘焙类", 
-    food:[
-      { image: "https://www.chuanshoucs.com/ServerImg/2018-05-11/3b4781fb-463c-4b5d-9003-9f13c5f42d9b.png", name: "菠萝夹心面包", ul:"https://www.chuanshoucs.com/ServerImg/2018-05-11/f79b35da-4234-4e9d-a017-868cd429e2eb.png",age:"194",time:"2018-04-16 17:34"},
-      { image: "https://www.chuanshoucs.com/ServerImg/2018-05-11/c340ffc1-1446-4780-8e9d-235d31fc19a9.png", name: "金蒜罗宋包", ul: "https://www.chuanshoucs.com/ServerImg/2018-05-11/f79b35da-4234-4e9d-a017-868cd429e2eb.png", age: "185", time: "2018-04-16 16:19" },
-      { image: "https://www.chuanshoucs.com/ServerImg/2018-05-11/3b4781fb-463c-4b5d-9003-9f13c5f42d9b.png", name: "菠萝夹心面包", ul: "https://www.chuanshoucs.com/ServerImg/2018-05-11/f79b35da-4234-4e9d-a017-868cd429e2eb.png", age: "194", time: "2018-04-16 17:34" },
-      { image: "https://www.chuanshoucs.com/ServerImg/2018-05-11/c340ffc1-1446-4780-8e9d-235d31fc19a9.png", name: "金蒜罗宋包", ul: "https://www.chuanshoucs.com/ServerImg/2018-05-11/f79b35da-4234-4e9d-a017-868cd429e2eb.png", age: "185", time: "2018-04-16 16:19" },
-      { image: "https://www.chuanshoucs.com/ServerImg/2018-05-11/3b4781fb-463c-4b5d-9003-9f13c5f42d9b.png", name: "菠萝夹心面包", ul: "https://www.chuanshoucs.com/ServerImg/2018-05-11/f79b35da-4234-4e9d-a017-868cd429e2eb.png", age: "194", time: "2018-04-16 17:34" },
-      { image: "https://www.chuanshoucs.com/ServerImg/2018-05-11/c340ffc1-1446-4780-8e9d-235d31fc19a9.png", name: "金蒜罗宋包", ul: "https://www.chuanshoucs.com/ServerImg/2018-05-11/f79b35da-4234-4e9d-a017-868cd429e2eb.png", age: "185", time: "2018-04-16 16:19" }
-    ]
+    food:[],
   },
 
   /**
@@ -32,14 +25,13 @@ Page({
 
         success: function (res) {
           console.info(res);
+
+         that.setData({
+            food : res.data,
+         })
          
         }
       })
-
-
-
-
-
 
     // 修改头部导航栏标题
     var da = this.data.leibie;
