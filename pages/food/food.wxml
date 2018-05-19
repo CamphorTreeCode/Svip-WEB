@@ -4,8 +4,8 @@
       <image src='{{iconImg[index].iconImg}}'></image><text>{{item.recipestypename}}</text> 
     </view>
     <view class='tutu'>
-      <view class='tupian' wx:for-item="item" wx:for="{{item.image}}"  >
-        <image src='{{item.image}}'></image>
+      <view class='tupian'   >
+        <image wx:for="{{item.recipesList}}" wx:for-item="items"  src='{{items.recipesimg}}'></image>
       </view>
        <text class='txt' >更多</text>
     </view>
