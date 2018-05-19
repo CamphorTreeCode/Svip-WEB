@@ -8,85 +8,40 @@
 //     wx.sendSocketMessage({
 //       data: "hello"
 //     })
-
-
-  
+ 
 //   wx.onSocketMessage(function (res) {
 //     console.log('收到服务器内容：' + res.data)
 //   })
 // }
-var check = require('utils/authorizationCheck.js');
+var userLogin = require('utils/userlogin.js');
 App({
   
   onLaunch: function () {
-    console.log("app.js start ")
-    var that = this;
-    var socketOpen = false
-    var socketMsgQueue = []
-    // 定义省份城市
-    //打开websocket
-    // wx.connectSocket({
-    //   url: 'ws://localhost:8080/wx/websocket',
-    //   data: {
-    //     x: '111',
-    //     y: '222'
-    //   },
-    //   header: {
-    //     'content-type': 'application/json'
-    //   },
-    //   method: "GET",
-    //   success:function(res){
-    //   console.log("1",res)
+    console.log("app.js start")
+    var that = this; 
+   
+    //权限验证
+    // console.log("app.js start ")
+    // wx.getUserInfo({
+    //   success: function (res) {
+    //     console.log("app.js start ")
+    //     console.log(res.errMsg)
+    //     if (res.errMsg == "getUserInfo:ok") {
+    //       that.globalData.showSQ = true
+       
+    //       userLogin.login();
+    //     }
     //   }
     // })
-    //监听websocket
 
-    // 发送用户的信息
-    check.getLoginCheck(that)
 
-/**传用户数据 */
-     
-    wx.onSocketOpen(function (res) {
-      console.log("2",res)
-      socketOpen = true
-   
-        sendSocketMessage()
-      
-      socketMsgQueue = []
-    })
-    // 展示本地存储能力
+   // userLogin.login();
+
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
 
 
-    // 登录
-    wx.login({
-      success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
-      }
-    })
-    // 获取用户信息
-    wx.getSetting({
-      success: res => {
-        if (res.authSetting['scope.userInfo']) {
-          // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
-          wx.getUserInfo({
-            success: res => {
-              // 可以将 res 发送给后台解码出 unionId
-              this.globalData.userInfo = res.userInfo
-
-              // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-              // 所以此处加入 callback 以防止这种情况
-              if (that.userInfoReadyCallback) {
-                 that.userInfoReadyCallback(res)
-              }
-            }
-          })
-        }
-      }
-    })
-    
 
 
     //全局保存高宽度 
@@ -145,7 +100,10 @@ App({
     addShareholderIcon:"https://s14.postimg.org/rc78jmj4h/image.png", 
     //appUrl:"https://www.chuanshoucs.com/Svip/",
     appUrl: "http://localhost/Svip/",
-    appImgUrl:'https://www.chuanshoucs.com/ImgRegCompany/'
+    appImgUrl:'https://www.chuanshoucs.com/ImgRegCompany/',
+    showSQ: false,
+    noneShowButton: true,
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
   }
 })
 //www.chuanshoucs.com "http://localhost/Maven_Project/", https://www.chuanshoucs.com/RegCompany/ RegCompany

@@ -9,21 +9,16 @@ function login(that){
          var user = app.globalData.user[0]  
          console.log("<<<<<<<<<", user, app.globalData.appUrl)
           var userInfo = res.userInfo
-          user.nickname = userInfo.nickName
-          user.avatarurl = userInfo.avatarUrl
-          user.gender = userInfo.gender //性别 0：未知、1：男、2：女
-          user.province = userInfo.province
-          user.city = userInfo.city
-          user.country = userInfo.country
-          user.language = userInfo.language
-          user.jscode = jscode;
-          var users = JSON.stringify(user)
-          
+          getOpenid()
+          var openid = wx.getStorageSync('openid')
+          userInfo.openid = openid
+          userInfo.nickname = userInfo.nickName
           wx.request({
             url: app.globalData.appUrl + 'WXUser/addUser', //仅为示例，并非真实的接口地址
-            data: users,
+            data: userInfo,
             header: {
-              'content-type': 'application/json' // 默认值
+              'content-type': 'application/x-www-form-urlencoded', // 默认值
+
             },
             
 
@@ -52,7 +47,7 @@ function getOpenid() {
 
         } else {
           wx.request({
-            url: app.globalData.url + 'WxUser/getOpenid', //仅为示例，并非真实的接口地址
+            url: app.globalData.appUrl + 'WXUser/getOpenid', //仅为示例，并非真实的接口地址
             data: { jscode: res.code },
             method: "get",
             header: {

@@ -1,7 +1,7 @@
 
 import { $wuxPicker, $wuxPickerCity } from '../../components/wux'
 import { $wuxActionSheet } from '../../components/wux'
-
+var userLogin = require('../../utils/userlogin.js');
 var app = getApp();
 Page({
   /**
@@ -128,9 +128,12 @@ Page({
   onLoad: function (options) {
     var p = this
     var that = this
+
+
     //打印appUrl地址
     //console.info(app.globalData.appUrl);
     //首页轮播图
+
     wx.request({
       url: app.globalData.appUrl + 'WXShop/findHomePageImg',
       header: {
@@ -354,7 +357,8 @@ Page({
     wx.reLaunch({
       url: '/pages/Product/Product?addrIfo=5'
     })
-  }
+  },
+
 
 })
 

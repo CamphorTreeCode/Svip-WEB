@@ -3,7 +3,10 @@
 <import src="../../components/actionsheet/actionsheet.wxml" />
 
 <template is="actionsheet" data="{{ ...$wux.actionSheet }}" />
-
+<!--遮罩-->
+<my-component>
+</my-component>
+<!--遮罩-->
 
 <scroll-view scroll-y style="height:{{scrollHeight}}px;" bindscrolltolower="bindDownLoad" bindscroll="scroll">
 
