@@ -8,7 +8,7 @@
       <view class='tupian' wx:for="{{item.recipesList}}" wx:for-item="items">
         <image wx:for="{{items.recipesSwiper}}" wx:for-item="itemImg" bindtap='tupian' src='{{itemImg.recipesswiperimg}}'></image>
       </view>
-      <text class='txt' bindtap='gengduo'>更多</text>
+      <text class='txt' bindtap='gengduo' data-lid="{{item.recipestypeid}}">更多</text>
     </view>
   </view>
 </view>

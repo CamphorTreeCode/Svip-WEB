@@ -93,43 +93,22 @@ Page({
   onShareAppMessage: function () {
 
   },
+
+  //跳转到食谱详情页面
   tupian:function(e){
-    
+    console.info(e)
+    wx.navigateTo({
+      url: '/pages/food/foodpractice/foodpractice?lid=' + e.currentTarget.dataset.lid + ''
+    })
   },
-  gengduo:function(){
-    // console.log(2)
+
+  //跳转到当前类目下全部食谱列表
+  gengduo:function(e){
+    console.info(e)
+    wx.navigateTo({
+      url: '/pages/food/fooddetail/fooddetail?lid=' + e.currentTarget.dataset.lid + ''
+    })
 
   },
-
- 
-  operation: function (e) {
-    var index = e.currentTarget.dataset.index
-    console.log(index)
-  //   if (index == 0) {
-  //     wx.navigateTo({
-  //       url: '/pages/food/fooddetail/fooddetail'
-  //     })
-  //   }
-  //   if (index == 1) {
-  //     wx.navigateTo({
-  //       url: '/pages/food/fooddetail/fooddetail'
-  //     })
-  //   }
-  //   if (index == 2) {
-  //     wx.navigateTo({
-  //       url: '/pages/food/fooddetail/fooddetail'
-  //     })
-  //   }
-  //   if (index == 3) {
-  //     wx.navigateTo({
-  //       url: '/pages/food/fooddetail/fooddetail'
-  //     })
-  //   }
-  //   if (index == 4) {
-  //     wx.navigateTo({
-  //       url: '/pages/food/fooddetail/fooddetail'
-  //     })
-  //   }
-  }
 
 })
