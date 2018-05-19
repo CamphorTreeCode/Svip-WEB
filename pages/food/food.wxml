@@ -1,18 +1,23 @@
+
 <!--遮罩-->
 <my-component>
 </my-component>
 <!--遮罩-->
-<view wx:for="{{food}}"  wx:for-item="item" wx:for-index="index">
+
+<view wx:for="{{food}}" wx:for-item="item" wx:for-index="index">
+
   <view class='operation' data-path='{{item.path}}' data-index='{{index}}' bindtap='operation'>
-    <view class='titl'> 
-      <image src='{{iconImg[index].iconImg}}'></image><text>{{item.recipestypename}}</text> 
+    <view class='titl'>
+      <image src='{{iconImg[index].iconImg}}'></image>
+      <text>{{item.recipestypename}}</text>
     </view>
     <view class='tutu'>
-      <view class='tupian'   >
-        <image wx:for="{{item.recipesList}}" wx:for-item="items"  src='{{items.recipesimg}}'></image>
+      <view class='tupian' wx:for="{{item.recipesList}}" wx:for-item="items">
+        <image wx:for="{{items.recipesSwiper}}" wx:for-item="itemImg" bindtap='tupian' src='{{itemImg.recipesswiperimg}}'></image>
       </view>
-       <text class='txt' >更多</text>
-    </view>   
+
+      <text class='txt' bindtap='gengduo'>更多</text>
+    </view>
+
   </view>
 </view>
- 
