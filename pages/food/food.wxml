@@ -6,9 +6,9 @@
     </view>
     <view class='tutu'>
       <view class='tupian' wx:for="{{item.recipesList}}" wx:for-item="items">
-        <image wx:for="{{items.recipesSwiper}}" wx:for-item="itemImg" src='{{itemImg.recipesswiperimg}}'></image>
+        <image wx:for="{{items.recipesSwiper}}" wx:for-item="itemImg" bindtap='tupian' src='{{itemImg.recipesswiperimg}}'></image>
       </view>
-      <text class='txt'>更多</text>
+      <text class='txt' bindtap='gengduo'>更多</text>
     </view>
   </view>
 </view>

@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    flag: "0",
+    index:"",
     iconImg: [
       { iconImg: "https://www.chuanshoucs.com/ServerImg/2018-05-11/516e646e-0821-4721-98f3-90b04e90802c.png" },
       { iconImg: "https://www.chuanshoucs.com/ServerImg/2018-05-11/5a1e0c1e-4201-4dbe-9866-211f6b4a7a2a.png" },
@@ -93,39 +93,43 @@ Page({
   onShareAppMessage: function () {
 
   },
+  tupian:function(e){
+    
+  },
+  gengduo:function(){
+    // console.log(2)
 
+  },
+
+ 
   operation: function (e) {
     var index = e.currentTarget.dataset.index
     console.log(index)
-    if (index == 0) {
-      wx.navigateTo({
-        url: '/pages/food/fooddetail/fooddetail'
-      })
-    }
-    if (index == 1) {
-      wx.navigateTo({
-        url: '/pages/food/fooddetail/fooddetail'
-      })
-    }
-    if (index == 2) {
-      wx.navigateTo({
-        url: '/pages/food/fooddetail/fooddetail'
-      })
-    }
-    if (index == 3) {
-      wx.navigateTo({
-        url: '/pages/food/fooddetail/fooddetail'
-      })
-    }
-    if (index == 4) {
-      wx.navigateTo({
-        url: '/pages/food/fooddetail/fooddetail'
-      })
-    }
-
-
-
-
+  //   if (index == 0) {
+  //     wx.navigateTo({
+  //       url: '/pages/food/fooddetail/fooddetail'
+  //     })
+  //   }
+  //   if (index == 1) {
+  //     wx.navigateTo({
+  //       url: '/pages/food/fooddetail/fooddetail'
+  //     })
+  //   }
+  //   if (index == 2) {
+  //     wx.navigateTo({
+  //       url: '/pages/food/fooddetail/fooddetail'
+  //     })
+  //   }
+  //   if (index == 3) {
+  //     wx.navigateTo({
+  //       url: '/pages/food/fooddetail/fooddetail'
+  //     })
+  //   }
+  //   if (index == 4) {
+  //     wx.navigateTo({
+  //       url: '/pages/food/fooddetail/fooddetail'
+  //     })
+  //   }
   }
 
 })
