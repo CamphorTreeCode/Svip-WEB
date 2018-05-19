@@ -16,7 +16,8 @@
     "pages/food/foodpractice/foodpractice",
     "pages/study/study",
     "pages/study/studydetail/studydetail",
-    "pages/ous/ous"
+    "pages/ous/ous",
+    "pages/order/order"
 ],
   "window":{
   "backgroundTextStyle":"light",

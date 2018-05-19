@@ -9,10 +9,12 @@ function login(that){
          var user = app.globalData.user[0]  
          console.log("<<<<<<<<<", user, app.globalData.appUrl)
           var userInfo = res.userInfo
+
           getOpenid()
           var openid = wx.getStorageSync('openid')
           userInfo.openid = openid
           userInfo.nickname = userInfo.nickName
+
           wx.request({
             url: app.globalData.appUrl + 'WXUser/addUser', //仅为示例，并非真实的接口地址
             data: userInfo,

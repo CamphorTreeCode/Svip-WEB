@@ -1,35 +1,16 @@
-
-var app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    top:{},
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.info(options)
-    var that = this;
     
-    wx.request({
-      url: app.globalData.appUrl + 'WXLearning/findLearningDetails?learningWorldId='+options.lid+'',
-      header: {
-        'content-type': 'application/x-www-form-urlencoded', // 默认值
-        xcxuser_name: "xcxuser_name"
-      },
-      success: function (res) {
-        console.info(res)
-        that.setData({
-          top:res.data,
-          
-        })
-      }
-    })
   },
 
   /**
@@ -79,16 +60,5 @@ Page({
    */
   onShareAppMessage: function () {
     
-  },
-  onimg:function(){
-    this.setData({
-    
-    })
-  },
-  onimg1: function () {
-    this.setData({
-      fenxiang: "https://www.chuanshoucs.com/ServerImg/2018-05-11/433b8da8-0829-427b-abbd-c725515395ba.png"
-    })
   }
-
 })

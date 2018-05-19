@@ -8,7 +8,7 @@
       <text>Super VIP</text>
     </view>
     <view class='a2'>
-      <text>{{item.time}}</text>
+      <text>{{item.learningworldcreattime}}</text>
     </view>
   </view>
 
@@ -17,37 +17,39 @@
 
     <!-- 标题和内容 -->
     <view class='b_c'>
-      <text>{{item.name}}</text>
+      <text>{{item.learningworldtitle}}</text>
     </view>
     <view class='b_b'>
-      <text>{{item.detail}}</text>
+      <text>{{item.learningworldcontent}}</text>
     </view>
 
-    <!--视频区-->
-    <view class='img_a'>
-      <!-- <view>{{item.url}}</view>  -->
-      <view class='aaa'></view>
-      <video src='/img/study/movie.ogg' show-fullscreen-btn='false'></video>
-      <!-- <image class='sww' src='{{icon}}'></image>
-        <image class='saa' src='{{item.url}}'></image> -->
+    <view class='img_a' hidden="{{item.learningworldvideourl == ''? true : false}}">
+      <video src='/img/study/movie.ogg'></video>
+    </view>
+    <view class='aaa  qqqq' hidden="{{item.learningworldvideourl == ''? false : true}}">
+      <image wx:for="{{item.learningWorldImg}}" wx:for-item="items" src="{{items.learningworldimgurl}}"></image>
     </view>
 
     <!-- 点赞浏览数据 -->
     <view class='b_d'>
+      <image src='https://www.chuanshoucs.com/ServerImg/2018-05-16/fd5a6720-e9fc-4d03-964a-26e403a6f073.png'></image>
+      <text style='padding-right:15rpx'>{{item.learningworldbrowse}}</text>
       <image src='https://www.chuanshoucs.com/ServerImg/2018-05-11/32c140a8-fa11-4179-837e-a406e56ecfd5.png'></image>
-      <text>{{item.eys}}</text>
+      <text>{{item.learningworldbrowse}}</text>
       <image class='b_aa' src='https://www.chuanshoucs.com/ServerImg/2018-05-11/2c71c135-0189-4520-9bbf-77ebac0b8648.png'></image>
-      <text>{{item.zan}}</text>
+      <text>{{item.learningworldfabulous}}</text>
     </view>
-  </view> 
+  </view>
 
 </view>
 <!-- 点赞浏览图标 -->
 <view class='bottoma'>
   <view class='center'>
     <view class='left left_2'>
-      <image bindtap='onimg' src='https://www.chuanshoucs.com/ServerImg/2018-05-11/2c71c135-0189-4520-9bbf-77ebac0b8648.png'></image>
-      <view>赞一下</view>
+      <image bindtap='onimg' src='https://www.chuanshoucs.com/ServerImg/2018-05-11/01ba72ea-867b-4287-82e6-124383fca865.png'></image>
+      <!--// zan: "https://www.chuanshoucs.com/ServerImg/2018-05-11/01ba72ea-867b-4287-82e6-124383fca865.png"灰色图片-->
+      <view v-if="1" style='color:#ccc'>赞一下</view>
+      <!-- <view v-if="0" style='color:#red'>赞一下</view> -->
     </view>
     <view class='left'>
       <image bindtap='onimg1' src='https://www.chuanshoucs.com/ServerImg/2018-05-11/3604a53a-7842-490e-8888-20030d79ccdc.png'></image>

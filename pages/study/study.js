@@ -3,7 +3,7 @@ var app = getApp();
 
 Page({
   /**
-   * 页面的初始数据
+   * 页面的初始数据 
    */
   data: {
 
@@ -87,9 +87,10 @@ Page({
   onShareAppMessage: function () {
 
   },
-  lujing: function () {
+  lujing: function (e) {
+    console.info(e)
     wx.navigateTo({
-      url: '/pages/study/studydetail/studydetail'
+      url: '/pages/study/studydetail/studydetail?lid=' + e.currentTarget.dataset.lid+''
     })
   }
 })

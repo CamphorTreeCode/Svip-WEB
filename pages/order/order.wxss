@@ -1,0 +1,7 @@
+/* pages/order/order.wxss */
+.head{background: white;padding-top: 20rpx}
+.content{margin: 0 5%;height: 80rpx;}
+.content1{margin: 20rpx 5%;background: white;margin-bottom: 0}
+input{border: 1rpx;display: inline-block;background: white;border-radius: 10rpx;height: 80rpx;width: 66%;float: left;padding: 0 2%;border: 1rpx solid #ccc}
+.btn{display: inline-block;width: 26%;background: red;height: 80rpx;margin-left: 3%;border-radius: 10rpx;background: #ff8489;text-align: center;line-height: 80rpx;color: white;float: left;font-size: 30rpx}
+image{width: 100%;margin: 0;padding: 0;min-width: 100%;}
