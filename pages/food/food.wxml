@@ -1,3 +1,7 @@
+<!--遮罩-->
+<my-component>
+</my-component>
+<!--遮罩-->
 <view wx:for="{{food}}"  wx:for-item="item" wx:for-index="index">
   <view class='operation' data-path='{{item.path}}' data-index='{{index}}' bindtap='operation'>
     <view class='titl'> 
@@ -8,8 +12,7 @@
         <image wx:for="{{item.recipesList}}" wx:for-item="items"  src='{{items.recipesimg}}'></image>
       </view>
        <text class='txt' >更多</text>
-    </view>
-   
+    </view>   
   </view>
 </view>
  

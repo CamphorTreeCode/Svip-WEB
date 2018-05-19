@@ -1,4 +1,8 @@
 <!--pages/my/my.wxml-->
+<!--遮罩-->
+<my-component>
+</my-component>
+<!--遮罩-->
 <!--头部用户信息-->
 <view class='head'>
    <!--头像-->

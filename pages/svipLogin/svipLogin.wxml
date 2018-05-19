@@ -1,4 +1,8 @@
 <!--pages/svipLogin/svipLogin.wxml-->
+<!--遮罩-->
+<my-component>
+</my-component>
+<!--遮罩-->
 <form  bindsubmit="formSubmit">
 <!--头部logo-->
 <view class='head'>

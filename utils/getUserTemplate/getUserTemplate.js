@@ -8,7 +8,6 @@ Component({
   properties: {
 
   },
-
   /**
    * 组件的初始数据
    */
@@ -17,7 +16,6 @@ Component({
     noneShowButton: true,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
   },
-
   /**
    * 组件的方法列表
    */

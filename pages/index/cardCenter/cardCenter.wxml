@@ -1,4 +1,8 @@
 <!--pages/index/cardCenter/cardCenter.wxml-->
+<!--遮罩-->
+<my-component>
+</my-component>
+<!--遮罩-->
 <view class="yuhuiquanBody" wx:for="{{cardArr}}">
   <view class="cardImg">
     <image src="/img/type/quan.png"></image>

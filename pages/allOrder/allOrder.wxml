@@ -1,5 +1,9 @@
 <!--pages/allOrder/allOrder.wxml-->
 <!--页面头部浏览器定位-->
+<!--遮罩-->
+<my-component>
+</my-component>
+<!--遮罩-->
 <view class='fixed'>
   <!--时间插件-->
   <view class='data'>

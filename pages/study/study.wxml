@@ -1,4 +1,8 @@
 <!--视频展示-->
+<!--遮罩-->
+<my-component>
+</my-component>
+<!--遮罩-->
 <view class='header' wx:for="{{top}}">
     <view class='top'>
         <image src='https://www.chuanshoucs.com/ServerImg/2018-05-11/705e081f-a6fb-4bcd-9711-8f1a1092a29d.png'></image>

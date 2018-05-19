@@ -1,5 +1,8 @@
 <!--pages/performance/performance.wxml-->
-
+<!--遮罩-->
+<my-component>
+</my-component>
+<!--遮罩-->
 <view class='headOut'>
     <!--头部红色框-->
     <view class='head'>

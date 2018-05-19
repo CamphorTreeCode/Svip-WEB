@@ -1,4 +1,8 @@
 <!--pages/platform/platform.wxml-->
+<!--遮罩-->
+<my-component>
+</my-component>
+<!--遮罩-->
 <view wx:for="{{platform}}"  wx:for-item="item" wx:for-index="index" class='xh'>
   <view class='platform' bindtap='checkPlatform' data-index='{{index}}' data-text='{{item.platformName}}'>
       <image src='{{item.platformImg}}' class='icon'></image>

@@ -1,3 +1,8 @@
+
+<!--遮罩-->
+<my-component>
+</my-component>
+<!--遮罩-->
 <view class='header' wx:for="{{top}}">
 
   <!--Logo栏-->

@@ -1,6 +1,9 @@
 <!--pages/Product/shopDetails/shopDetails.wxml-->
 <!--轮播图 start  -->
-
+<!--遮罩-->
+<my-component>
+</my-component>
+<!--遮罩-->
 
 <swiper class="swiper" indicator-active-color="#FD7073" indicator-dots="true" autoplay="true" interval="5000" duration="1000"  circular="true"   indicator-color="#fff" >
   <block wx:for="{{movies}}" wx:for-index="index">

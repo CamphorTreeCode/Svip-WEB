@@ -1,4 +1,8 @@
 <!--pages/ApplicationToJoin/ApplicationToJoin.wxml-->
+<!--遮罩-->
+<my-component>
+</my-component>
+<!--遮罩-->
 <!--项目介绍-->
 <view class='projectIntroduction title'>
     <image src='/img/ApplicationToJoin/xiangmuguanli@2x.png'></image>

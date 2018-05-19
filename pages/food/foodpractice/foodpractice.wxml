@@ -1,3 +1,7 @@
+<!--遮罩-->
+<my-component>
+</my-component>
+<!--遮罩-->
 <view wx:for="{{food}}"  wx:for-item="item" wx:for-index="index">
   <view class='operation' data-path='{{item.path}}' data-index='{{index}}' bindtap='operation'>
     <image class='img1' src='{{item.image}}'></image>

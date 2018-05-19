@@ -1,2 +1,6 @@
 <!--pages/stu.wxml-->
+<!--遮罩-->
+<my-component>
+</my-component>
+<!--遮罩-->
 <text>pages/stu.wxml</text>

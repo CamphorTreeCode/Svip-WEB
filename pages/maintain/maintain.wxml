@@ -1,4 +1,8 @@
 <!--pages/maintain/maintain.wxml-->
+<!--遮罩-->
+<my-component>
+</my-component>
+<!--遮罩-->
 <form bindsubmit='formSubmit'>
 <view class='machineModel title'>
     <image src='/img/maintain/jiqixinghao@2x.png '></image>

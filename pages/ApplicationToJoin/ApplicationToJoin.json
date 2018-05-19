@@ -1,1 +1,4 @@
-{}
+{
+  "usingComponents": {
+    "my-component": "/utils/getUserTemplate/getUserTemplate"
+  }}
