@@ -11,7 +11,8 @@ Page({
       { image: '/img/my/fenxiaoshang.png ', text: '成为分销商', path:'/pages/ApplicationToJoin/ApplicationToJoin'},
       { image: '/img/my/kaquan.png  ', text: '我的卡劵', path: '' },
       { image: '/img/my/yeji.png ', text: '业绩管理', path: '/pages/svipLogin/svipLogin'},
-      { image: '/img/my/kefu.png ', text: '联系客服', path: '' },
+      { image: '/img/my/dingdan.png ', text: '订单审核', path: '' },
+      { image: '/img/my/kefu.png ', text: '联系客服', path: '' }
 
       ],
   
@@ -95,7 +96,15 @@ Page({
         url:path,
       })
     }
-    if(index==3){
+    if (index == 3) {
+      wx.navigateTo({
+        url: '/pages/index/cardCenter/cardCenter',
+        url: '/pages/order/order',
+      })
+    }
+
+
+    if(index==4){
       wx.makePhoneCall({
         phoneNumber: '13564933014',
         success: function () {
