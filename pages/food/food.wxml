@@ -1,7 +1,7 @@
 <view wx:for="{{food}}"  wx:for-item="item" wx:for-index="index">
   <view class='operation' data-path='{{item.path}}' data-index='{{index}}' bindtap='operation'>
     <view class='titl'> 
-      <image src='{{item.iconImg[index].iconImg}}'></image><text>{{item.recipestypename}}</text> 
+      <image src='{{iconImg[index].iconImg}}'></image><text>{{item.recipestypename}}</text> 
     </view>
     <view class='tutu'>
       <view class='tupian' wx:for-item="item" wx:for="{{item.image}}"  >

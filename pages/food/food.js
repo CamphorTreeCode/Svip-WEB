@@ -7,21 +7,14 @@ Page({
    */
   data: {
     flag: "0",
-    food:[
-      {
-      iconImg: [
-        { iconImg: "https://www.chuanshoucs.com/ServerImg/2018-05-11/516e646e-0821-4721-98f3-90b04e90802c.png" },
-        { iconImg: "https://www.chuanshoucs.com/ServerImg/2018-05-11/5a1e0c1e-4201-4dbe-9866-211f6b4a7a2a.png" },
-        { iconImg: "https://www.chuanshoucs.com/ServerImg/2018-05-11/d40898fe-5cc1-45ce-9702-6a0fd0d4b3a3.png" },
-        { iconImg: "https://www.chuanshoucs.com/ServerImg/2018-05-11/6b68fbb5-6790-4a98-ada2-c88e6ddbcd08.png" },
-        { iconImg: "https://www.chuanshoucs.com/ServerImg/2018-05-11/c8c97fa1-0a3e-49f2-9df2-35a2569719d1.png" },
-      ],
-      title: [],
-      image: {},
-      }
+    iconImg: [
+      { iconImg: "https://www.chuanshoucs.com/ServerImg/2018-05-11/516e646e-0821-4721-98f3-90b04e90802c.png" },
+      { iconImg: "https://www.chuanshoucs.com/ServerImg/2018-05-11/5a1e0c1e-4201-4dbe-9866-211f6b4a7a2a.png" },
+      { iconImg: "https://www.chuanshoucs.com/ServerImg/2018-05-11/d40898fe-5cc1-45ce-9702-6a0fd0d4b3a3.png" },
+      { iconImg: "https://www.chuanshoucs.com/ServerImg/2018-05-11/6b68fbb5-6790-4a98-ada2-c88e6ddbcd08.png" },
+      { iconImg: "https://www.chuanshoucs.com/ServerImg/2018-05-11/c8c97fa1-0a3e-49f2-9df2-35a2569719d1.png" },
     ],
-    
-  
+    food:[{}],
   },
 
   /**
