@@ -9,7 +9,7 @@
   <view class="weui-search-bar__form">
     <view class="weui-search-bar__box">
       <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
-      <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+      <input type="text" class="weui-search-bar__input" placeholder="{{searchValue}}" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
       <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
         <icon type="clear" size="14"></icon>
       </view>
@@ -24,7 +24,7 @@
 <!--搜索 end -->
 <!--选择栏 start  -->
 <scroll-view class="" scroll-x="true" class="tab-h topSelect" scroll-left="{{scrollLeft}}">
-  <view wx:for="{{selectValue}}" class="tab-item {{currentTab==index?'active':''}} boxCenter" data-current="{{index}}" catchtap="swichNav" >
+  <view wx:for="{{selectValue}}" class="tab-item {{currentTab==index?'active':''}} boxCenter" data-value="{{item.text}}"  data-current="{{index}}" catchtap="swichNav" >
     <view class="itemImg box lf">
       <image src="{{item.selectFalg?item.img:item.selectImg}}"></image>
     </view>
@@ -32,9 +32,9 @@
   </view>
 </scroll-view>
 </view>
-<swiper class="tab-content" current="{{currentTab}}" duration="300" bindchange="switchTab" style="height:{{260*(productArr.length/2)}}px">
+<swiper class="tab-content" current="{{currentTab}}" duration="300" bindchange="switchTab" style="height:{{260*shopList.length/2}}px">
   <swiper-item wx:for="{{[0,1,2,3,4,5]}}">
-    <scroll-view scroll-y="true" class="scoll-h">
+    <scroll-view scroll-y="true" style="height:{{260*shopList.length/2}}px" class="scoll-h"   bindscrolltolower="lower">
       <block wx:for="{{shopList}}" wx:key="*this">
         <!--每个商品 start  -->
         <view class="shopList lf" catchtap='shopDetails'>

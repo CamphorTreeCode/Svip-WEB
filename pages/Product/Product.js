@@ -17,14 +17,14 @@ function selectTabImg(that, index) {
   
 }
 var pagesize = 0;
-function selectTypePage(that,shopTypeId){
-
-
+function selectTypePage(that){
+  
   wx.request({
     url: app.globalData.appUrl + 'WXShop/selectShopTypePage',
     data: {
-      shopTypeId: shopTypeId+1,
-      currentPage: ++pagesize
+      shopTypeId: that.data.shopTypeId+1,
+      currentPage: ++pagesize,
+      shoptitle: that.data.inputVal == '' ? null : that.data.inputVal
     },
     header: {
       // 'content-type': 'application/x-www-form-urlencoded' // 默认值
@@ -139,7 +139,10 @@ Page({
         shopMoneydis: 229,
         typeImg: 1
       }
-    ]
+    ],
+    shopTypeId:0,
+    searchValue:"搜索",
+    inputVal: null
 
   },
   /**
@@ -156,10 +159,10 @@ Page({
      this.checkCor();
      this.setData({
        shopList: []
-
+    
      })
      pagesize = 0
-    selectTypePage(this,0)
+    selectTypePage(this)
   },
 
   /**
@@ -215,9 +218,11 @@ Page({
       inputShowed: true
     });
   },
-  hideInput: function () {
+  hideInput: function (e) {
+    console.log("进来搜索。")
+    pagesize = 0
+    selectTypePage(this)
     this.setData({
-
       inputShowed: true
     });
   },
@@ -235,8 +240,11 @@ Page({
 
   // 滚动切换标签样式
   switchTab: function (e) {
+   console.log(e)
 
-
+   this.setData({
+     searchValue: this.data.selectValue[e.detail.current].text
+   })
     if (this.data.currentTab == e.detail.current) {
       console.log("等于的时候");
        return false; }
@@ -244,12 +252,13 @@ Page({
       console.log("switchTab", e.detail.current)
       this.setData({
         currentTab: e.detail.current,
-        shopList:[]
+        shopList:[],
+        shopTypeId: e.detail.current,
       });
       pagesize = 0
       this.checkCor();
       selectTabImg(this, e.detail.current)
-      selectTypePage(this, e.detail.current)
+      selectTypePage(this)
  
     }
 
@@ -258,16 +267,22 @@ Page({
   swichNav: function (e) {
    
     var cur = e.currentTarget.dataset.current;
+    var value = e.currentTarget.dataset.value;
+    this.setData({
+      searchValue: value
+    })
+
     if (this.data.currentTab == cur) { return false; }
     else {
       this.setData({
         currentTab: cur,
-        shopList: []
+        shopList: [],
+        shopTypeId: cur,
       })
       pagesize = 0
       console.log("swichNav", e.currentTarget.dataset.current)
       selectTabImg(this, cur)
-      selectTypePage(this, cur)
+      selectTypePage(this)
     
     }
 
@@ -295,6 +310,12 @@ Page({
     wx.navigateTo({
       url: '/pages/Product/shopDetails/shopDetails'
     })
+  },
+  //上拉刷新
+  lower() {
+    console.log("..")
+    var that = this
+    selectTypePage(that)
   }
 
 })
