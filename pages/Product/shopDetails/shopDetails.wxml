@@ -45,6 +45,19 @@
     <view class="immediately">立即领券</view>
 </view>
 <!--sku属性  start-->
+<view class='sku'>
+  <view class='xuanze'>已选<text >宝石红</text> </view>
+  <view class='xuan'  >颜色
+<text >绿色</text><text class='hong' >宝石红</text> <text >白色</text></view>
+
+</view>
+<view class='sku_bottom'>
+   <view class='chong'>规格</view>
+   <view>3C规格型号:VM0181 800W-950W 220-240V</view>
+   <view>产品名称：Vitamix s30</view>
+   <view>搅拌/料理机类型:破壁机</view>
+   <view>颜色分类：红色</view>
+</view>
 <!--sku属性  end>
 <!--图片详情  -->
 <view class="bottomDetatils">
