@@ -1,10 +1,11 @@
-// pages/Product/shopDetails/shopDetails.js
+﻿// pages/Product/shopDetails/shopDetails.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+	 yanse: [{ name: "白色" }, { name: "白色" }, { name: "白色" }],
    // 轮播图
     movies: [
       { url: 'https://www.chuanshoucs.com/ServerImg/2018-04-18/085af5be-848b-49a6-a734-512c367c21ba.jpg' },
@@ -97,5 +98,16 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+  swichNav: function (e) {
+
+    var cur = e.currentTarget.dataset.current;
+    if (this.data.currentTab == cur) { return false; }
+    else {
+      this.setData({
+        currentTab: cur
+      })
+
+    }
   }
 })

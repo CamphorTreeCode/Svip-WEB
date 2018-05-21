@@ -166,6 +166,7 @@ width:34%;
   background: #FF7076;
 }
 
+
 .sku{
   padding:3% 5%;
   font-size: 30rpx;
@@ -177,8 +178,11 @@ width:34%;
 }
 .sku .xuanze text{color: #939393;margin-left: 20rpx}
 .sku .xuan{margin: 20rpx 0;}
-.sku .xuan text{margin-left: 20rpx;padding: 20rpx 30rpx;background: #F3F2F8;border-radius: 10rpx;color: black;}
+.sku .xuan text{padding: 0rpx 30rpx;border-radius: 10rpx;}
 .sku .xuan .hong{background: #FF8489;color: white}
 .sku_bottom view{margin: 20rpx 0;font-size: 30rpx;color: #7D7D7D}
 .sku_bottom .chong{font-weight: bold;color: black}
 .xuan-left{display: inline-block}
+.xx{display: inline-block;}
+.tab-item{display: inline-block;background: #F3F2F8;margin-left: 20rpx;border-radius: 10rpx;color: black;padding: 10rpx}
+.active{background:#FF8489;color: white}

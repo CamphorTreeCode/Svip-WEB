@@ -1,4 +1,4 @@
-<!--pages/Product/shopDetails/shopDetails.wxml-->
+﻿<!--pages/Product/shopDetails/shopDetails.wxml-->
 <!--轮播图 start  -->
 <!--遮罩-->
 <my-component>
@@ -47,8 +47,11 @@
 <!--sku属性  start-->
 <view class='sku'>
   <view class='xuanze'>已选<text >宝石红</text> </view>
-  <view class='xuan'  >颜色
-<text >绿色</text><text class='hong' >宝石红</text> <text >白色</text></view>
+  <view class='xuan' >颜色
+   <view wx:for="{{yanse}}" class="tab-item {{currentTab==index?'active':''}} " data-current="{{index}}" catchtap="swichNav" >
+    <text>{{item.name}}</text>
+  </view>
+  </view>
 
 </view>
 <view class='sku_bottom'>
