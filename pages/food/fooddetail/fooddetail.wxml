@@ -4,11 +4,16 @@
 <!--遮罩-->
 <view wx:for="{{food}}" wx:for-item="item" wx:for-index="index" class='aw' class='sss'>
   <view class='operation aw' data-path='{{item.path}}' data-index='{{index}}' bindtap='operation'>
-  <view class='left'><image src='{{item.image}}'></image></view>
-  <view class='right'>
-   <text class='name'>{{item.name}}</text>
-   <view ><image src='{{item.ul}}'></image><text class='eys'>{{item.age}}</text></view>
-    <text class='time'>{{item.time}}</text>
+    <view class='left' wx:for="{{item.recipesSwiper}}" wx:for-item="items">
+      <image src='{{items.recipesswiperimg}}'></image>
+    </view>
+    <view class='right'>
+      <text class='name'>{{item.recipestitle}}</text>
+      <view>
+        <image src='https://www.chuanshoucs.com/ServerImg/2018-05-16/79190d63-ed35-4704-8d03-0c29bd093c39.png'></image>
+        <text class='eys'>{{item.recipesbrowse}}</text>
+      </view>
+      <text class='time'>{{item.recipescreattime}}</text>
+    </view>
   </view>
-   </view>
 </view>
