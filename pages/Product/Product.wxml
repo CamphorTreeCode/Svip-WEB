@@ -35,14 +35,14 @@
 <swiper class="tab-content" current="{{currentTab}}" duration="300" bindchange="switchTab" style="height:{{260*(productArr.length/2)}}px">
   <swiper-item wx:for="{{[0,1,2,3,4,5]}}">
     <scroll-view scroll-y="true" class="scoll-h">
-      <block wx:for="{{productArr}}" wx:key="*this">
+      <block wx:for="{{shopList}}" wx:key="*this">
         <!--每个商品 start  -->
         <view class="shopList lf" catchtap='shopDetails'>
           <view class="topImg">
-              <image mode="aspectFill" src="{{item.shopImg}}"></image>
+              <image mode="aspectFill" src="{{item.shopSwiperList[0].shopswiperimg}}"></image>
               <view class="youhuijuan" style="background-image:url('https://www.chuanshoucs.com/ServerImg/2018-04-18/9c5f5179-947a-4f10-b159-202384aaf17e.png');">
                <view class="yhjTextt yhjtxt">优惠劵</view>
-                <view class="yhjTextt">{{item.discountMoney}}元</view>
+                <view class="yhjTextt">{{item.shopDiscountMoney}}元</view>
           </view>
             </view>
        
@@ -50,10 +50,10 @@
             <view class="centerTypeImg lf boxCenter">
               <image src="{{item.typeImg==1?'/img/type/taobao.png':'/img/type/tianmao.png'}}"></image>
             </view>
-          <span class="titleText"> {{item.title}}</span>
+          <span class="titleText"> {{item.shoptitle}}</span>
           </view>
           <view class="bottomMoney">
-             <view class="textMoney lf">¥519</view>
+             <view class="textMoney lf">¥{{(item.shopSKUMoney[0].shopskumoney)-(item.shopDiscountMoney)}}</view>
              <view class="wentext lf">劵后</view>
           </view>
         </view>

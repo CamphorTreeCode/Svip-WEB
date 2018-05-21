@@ -1,4 +1,5 @@
 // pages/Product/Product.js
+var app = getApp();
 function selectTabImg(that, index) {
 
   var selectValue = that.data.selectValue
@@ -12,6 +13,44 @@ function selectTabImg(that, index) {
   that.setData({
     selectValue: selectValue
   })
+ 
+  
+}
+var pagesize = 0;
+function selectTypePage(that,shopTypeId){
+
+
+  wx.request({
+    url: app.globalData.appUrl + 'WXShop/selectShopTypePage',
+    data: {
+      shopTypeId: shopTypeId+1,
+      currentPage: ++pagesize
+    },
+    header: {
+      // 'content-type': 'application/x-www-form-urlencoded' // 默认值
+      'content-type': 'application/x-www-form-urlencoded', // 默认值
+      xcxuser_name: "xcxuser_name"
+    },
+    method: 'get',
+    success: function (res) {
+
+     console.log(res)
+
+      if (res.data[0].lists.length > 0) {
+
+        var shopList = that.data.shopList
+        for (var i = 0; i < res.data[0].lists.length; i++) {
+          shopList.push(res.data[0].lists[i])
+        }
+
+
+        console.info(res.data[0].lists, shopList)
+        that.setData({
+          shopList
+        })
+      }
+    }
+  }) 
 }
 Page({
 
@@ -56,6 +95,7 @@ Page({
     }],
     currentTab: 0, //预设当前项的值
     scrollLeft: 0, //tab标题的滚动条位置
+    shopList:[],
     productArr: [
       {
         title: '艾克丽净水器家用直饮厨房自来水龙头过直饮厨房自来水龙头过',
@@ -98,49 +138,7 @@ Page({
         discountMoney: 400,
         shopMoneydis: 229,
         typeImg: 1
-      },
-      {
-        title: '艾克丽净水器家用直饮厨房自来水龙头过直饮厨房自来水龙头过',
-        shopImg: 'https://www.chuanshoucs.com/ServerImg/2018-04-18/08d98ffa-5743-4b03-b49b-1fa8f8623594.png',
-        discountMoney: 200,
-        shopMoneydis: 1998,
-        typeImg: 1
-      },
-      {
-        title: '艾克丽净水器家用直饮厨房自来水龙头过直饮厨房自来水龙头过',
-        shopImg: 'https://www.chuanshoucs.com/ServerImg/2018-04-18/10f07b1d-ab69-47c0-b758-76e55f1e149d.png',
-        discountMoney: 90,
-        shopMoneydis: 539,
-        typeImg: 0
-      },
-      {
-        title: '艾克丽净水器家用直饮厨房自来水龙头过直饮厨房自来水龙头过',
-        shopImg: 'https://www.chuanshoucs.com/ServerImg/2018-04-18/e97959f2-e435-4b3e-97f5-4a5928b734d0.png',
-        discountMoney: 100,
-        shopMoneydis: 519,
-        typeImg: 0
-      },
-      {
-        title: '艾克丽净水器家用直饮厨房自来水龙头过直饮厨房自来水龙头过',
-        shopImg: 'https://www.chuanshoucs.com/ServerImg/2018-04-18/ae80616f-620f-47b9-805a-d08a2c9e6c38.png',
-        discountMoney: 400,
-        shopMoneydis: 229,
-        typeImg: 1
-      },
-      {
-        title: '艾克丽净水器家用直饮厨房自来水龙头过直饮厨房自来水龙头过',
-        shopImg: 'https://www.chuanshoucs.com/ServerImg/2018-04-18/08d98ffa-5743-4b03-b49b-1fa8f8623594.png',
-        discountMoney: 200,
-        shopMoneydis: 1998,
-        typeImg: 1
-      },
-      {
-        title: '艾克丽净水器家用直饮厨房自来水龙头过直饮厨房自来水龙头过',
-        shopImg: 'https://www.chuanshoucs.com/ServerImg/2018-04-18/10f07b1d-ab69-47c0-b758-76e55f1e149d.png',
-        discountMoney: 90,
-        shopMoneydis: 539,
-        typeImg: 0
-      },
+      }
     ]
 
   },
@@ -148,15 +146,20 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({
-      yemian: options.addrIfo
-    }) 
-    var ss=this.data.yemian;
-    this.setData({
-      currentTab: ss
-    });
-    this.checkCor();
-    selectTabImg(this, ss)
+    // this.setData({
+    //   yemian: options.addrIfo
+    // }) 
+    // var ss=this.data.yemian;
+    // this.setData({
+    //   currentTab: ss
+    // });
+     this.checkCor();
+     this.setData({
+       shopList: []
+
+     })
+     pagesize = 0
+    selectTypePage(this,0)
   },
 
   /**
@@ -229,46 +232,44 @@ Page({
       inputVal: e.detail.value
     });
   },
-  // 选择selelct
-  selectTab: function (e) {
-    var index = e.currentTarget.dataset.value
-    var that = this;
-    console.log()
-    var selectValue = that.data.selectValue
-    for (var i = 0; i < selectValue.length; i++) {
-      if (selectValue[i].selectFalg) {
-        selectValue[i].selectFalg = !selectValue[i].selectFalg
-      }
-    }
-    selectValue[index].selectFalg = !selectValue[index].selectFalg
 
-    that.setData({
-      selectValue: selectValue
-    })
-  },
   // 滚动切换标签样式
   switchTab: function (e) {
-    console.log(666666666666666)
-    console.log(e.detail.current)
-    console.log(e)
-    this.setData({
-      currentTab: e.detail.current
-    });
-    this.checkCor();
-    selectTabImg(this, e.detail.current)
+
+
+    if (this.data.currentTab == e.detail.current) {
+      console.log("等于的时候");
+       return false; }
+    else {
+      console.log("switchTab", e.detail.current)
+      this.setData({
+        currentTab: e.detail.current,
+        shopList:[]
+      });
+      pagesize = 0
+      this.checkCor();
+      selectTabImg(this, e.detail.current)
+      selectTypePage(this, e.detail.current)
+ 
+    }
+
   },
   // 点击标题切换当前页时改变样式
   swichNav: function (e) {
-    console.log(e, cur)
+   
     var cur = e.currentTarget.dataset.current;
-    if (this.data.currentTaB == cur) { return false; }
+    if (this.data.currentTab == cur) { return false; }
     else {
       this.setData({
-        currentTab: cur
+        currentTab: cur,
+        shopList: []
       })
+      pagesize = 0
+      console.log("swichNav", e.currentTarget.dataset.current)
+      selectTabImg(this, cur)
+      selectTypePage(this, cur)
+    
     }
-    selectTabImg(this, cur)
-
 
   },
   //判断当前滚动超过一屏时，设置tab标题滚动条。
@@ -295,6 +296,5 @@ Page({
       url: '/pages/Product/shopDetails/shopDetails'
     })
   }
-
 
 })
