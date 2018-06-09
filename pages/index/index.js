@@ -23,103 +23,7 @@ Page({
     ],
     //类目展示图
     notice1:'',
-    
-    // 净水器
-    waterPurifier: [
-      {
-        title: '美的（Midea）全自动家用智能净水器',
-        shopImg: 'https://www.chuanshoucs.com/ServerImg/2018-04-18/ee003db1-3f97-499e-9422-7416423fc64f.jpg',
-        discountMoney: 300,
-        shopMoneydis: 423,
-
-      },
-      {
-        title: '安之星台式净水器家用水龙头过滤器自来水净水器净水器',
-        shopImg: 'https://www.chuanshoucs.com/ServerImg/2018-04-18/98075ffa-6897-475c-83e0-b334dab81be6.jpg',
-        discountMoney: 200,
-        shopMoneydis: 298,
-      }
-
-    ],
-    //酸奶机
-    yogurtMachine: [
-      {
-        title: 'Joyung/九阳 SN10lO3A米酒酸奶机全自动全自动全自动',
-        shopImg: 'https://www.chuanshoucs.com/ServerImg/2018-04-18/3c2981d5-0d23-43e2-8578-e5c73ffcef2e.jpg',
-        discountMoney: 70,
-        shopMoneydis: 98,
-
-      },
-      {
-        title: '安之星台式净水器家用水龙头过滤器自来水净水器净水器',
-        shopImg: 'https://www.chuanshoucs.com/ServerImg/2018-04-18/36cb8c32-5e82-486b-9283-8e362b84ce7b.jpg',
-        discountMoney: 50,
-        shopMoneydis: 58,
-      }
-    ],
-    // 破壁机
-    breaking: [
-      {
-        title: '美国Vitamix s30破壁聊了机 多功能家用多功能家用',
-        shopImg: 'https://www.chuanshoucs.com/ServerImg/2018-04-18/e67d43ff-9e42-4f0b-ae9e-26f10300a98a.jpg',
-        discountMoney: 30,
-        shopMoneydis: 3199,
-
-      },
-      {
-        title: '格力高便携式电动榨汁杯迷你家用果蔬榨迷你家用果蔬榨',
-        shopImg: 'https://www.chuanshoucs.com/ServerImg/2018-04-18/107962e8-6871-4870-8686-7fcd0b2ecf0b.jpg',
-        discountMoney: 50,
-        shopMoneydis: 109,
-      }
-    ],
-    //洗碗机
-    dishes: [
-      {
-        title: '美国Vitamix s30破壁聊了机 多功能家用多功能家用',
-        shopImg: 'https://www.chuanshoucs.com/ServerImg/2018-04-18/bce5fea0-1343-403a-8b1e-d4560655f344.jpg',
-        discountMoney: 30,
-        shopMoneydis: 3199,
-      },
-      {
-        title: '格力高便携式电动榨汁杯迷你家用果蔬榨迷你家用果蔬榨',
-        shopImg: 'https://www.chuanshoucs.com/ServerImg/2018-04-18/fa2dca02-3b76-4234-bec9-d1d10a3fced8.jpg',
-        discountMoney: 50,
-        shopMoneydis: 109,
-      }
-    ],
-    //机器人
-    Robot: [
-      {
-        title: '美国Vitamix s30破壁聊了机 多功能家用多功能家用',
-        shopImg: 'https://www.chuanshoucs.com/ServerImg/2018-04-18/a39524c2-35b5-4d78-a8da-09a4e93ee887.jpg',
-        discountMoney: 30,
-        shopMoneydis: 3199,
-
-      },
-      {
-        title: '格力高便携式电动榨汁杯迷你家用果蔬榨迷你家用果蔬榨',
-        shopImg: 'https://www.chuanshoucs.com/ServerImg/2018-04-18/bd02fce5-c2ec-410b-92cb-11a58e19ccde.jpg',
-        discountMoney: 50,
-        shopMoneydis: 109,
-      }
-    ],
-    //护理机
-    Nursing: [
-      {
-        title: '美国Vitamix s30破壁聊了机 多功能家用多功能家用',
-        shopImg: 'https://www.chuanshoucs.com/ServerImg/2018-04-18/f59c22b1-c9a1-448e-9870-961dbd0cc235.jpg',
-        discountMoney: 30,
-        shopMoneydis: 3199,
-
-      },
-      {
-        title: '格力高便携式电动榨汁杯迷你家用果蔬榨迷你家用果蔬榨',
-        shopImg: 'https://www.chuanshoucs.com/ServerImg/2018-04-18/fe3676d8-7e09-436e-a80d-76228bb642cf.jpg',
-        discountMoney: 50,
-        shopMoneydis: 109,
-      }
-    ]
+    shops:[]
   },
 
   /**
@@ -154,24 +58,39 @@ Page({
           movies: movies
           })
       }
-    })
+     })
 
     //首页六张类目及其展示图
+    // wx.request({
+    //   url: app.globalData.appUrl + 'WXShop/findHomePageShopImg',
+    //   header: {
+    //     xcxuser_name: "xcxuser_name"
+    //   },
+    //   success: function (res){
+    //     console.info(res);
+    //     var img1 = res.data;
+    //     //console.info(img1[0]);
+    //     that.setData({
+    //       notice1:img1,
+    //     })
+    //   }
+    // })
+
+    //首页的每个分类前两个商品
     wx.request({
-      url: app.globalData.appUrl + 'WXShop/findHomePageShopImg',
+      url: app.globalData.appUrl + 'WXShop/findHomePageShop',
       header: {
         xcxuser_name: "xcxuser_name"
       },
-      success: function (res){
+      success: function (res) {
         console.info(res);
-        var img1 = res.data;
+      
         //console.info(img1[0]);
         that.setData({
-          notice1:img1,
+          shops: res.data,
         })
       }
     })
-    //  获取系统的高度
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -206,7 +125,7 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-    wx.showTabBarRedDot();
+  
   },
 
   /**
@@ -228,7 +147,10 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    return {
+      imageUrl: app.globalData.shareImg,
+      // title: app.globalData.shareTitle
+    }
   },
   // 功能区域跳转到页面
   JumpFunctions(e) {
@@ -322,43 +244,17 @@ Page({
     })
 
    },
-  jingshui:function(){
-
+  jingshui:function(e){
+    console.log(e, e.currentTarget.dataset.id)
     wx.reLaunch({
-      url: '/pages/Product/Product?addrIfo=2'
+      url: '/pages/Product/Product?id=' + e.currentTarget.dataset.id
     })
   },
-  suannai: function () {
-
-    wx.reLaunch({
-      url: '/pages/Product/Product?addrIfo=4'
+  shopDetails(e){
+    wx.navigateTo({
+      url: '/pages/Product/shopDetails/shopDetails?shopId=' + e.currentTarget.dataset.shopid
     })
-  },
-  pobi: function () {
-
-    wx.reLaunch({
-      url: '/pages/Product/Product?addrIfo=0'
-    })
-  },
-  xiwan: function () {
-
-    wx.reLaunch({
-      url: '/pages/Product/Product?addrIfo=1'
-    })
-  },
-  jiqi: function () {
-
-    wx.reLaunch({
-      url: '/pages/Product/Product?addrIfo=3'
-    })
-  },
-  huli: function () {
-
-    wx.reLaunch({
-      url: '/pages/Product/Product?addrIfo=5'
-    })
-  },
-
+  }
 
 })
 

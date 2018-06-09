@@ -3,24 +3,26 @@
 <my-component>
 </my-component>
 <!--遮罩-->
-<form bindsubmit='formSubmit'>
+<form bindsubmit='formSubmit' report-submit>
 <view class='machineModel title'>
     <image src='/img/maintain/jiqixinghao@2x.png '></image>
     <text>机器型号</text>
 </view>
 <view class='formProperty model'>
-    <input type='text' placeholder='输入您的机器型号'></input>
+    <input name="maintenancemodel" type='text' placeholder='输入您的机器型号' value="{{clearValue}}"></input>
 </view>
 
 <view class='formProperty platform' bindtap='choosePlatform'>
     <view class='property'>购买平台（可多选）</view>
+    <input name="maintenanceplatform" value="{{platform}}"  ></input>
     <image src='/img/ApplicationToJoin/498336855345553797.png '></image>  
+   
 </view>
 
 <view class='formProperty'>
-    <text>订单遍号：</text>
+    <text>订单编号：</text>
     
-    <input type='text' placeholder='请输入订单号'></input> 
+    <input name="maintenancenumber" type='text' placeholder='请输入订单号'  value="{{clearValue}}"></input> 
     
 </view>
 <view class='customerInformation title'>
@@ -29,7 +31,7 @@
 </view>
 <view class='formProperty'>
     <text>姓名：</text>
-    <input type='text' placeholder='请输入您的姓名'></input> 
+    <input type='text' name="maintenancename" placeholder='请输入您的姓名'  value="{{clearValue}}"></input> 
 </view>
 
 <view class='formProperty address' bindtap="translate">
@@ -39,11 +41,11 @@
 </view>
 <view class='formProperty'>
     <text>详细地址：</text>
-    <input type='text' placeholder='请输入详细地址'></input> 
+    <input type='text' name="maintenancedetailed" placeholder='请输入详细地址'  value="{{clearValue}}"></input> 
 </view>
 <view class='formProperty'>
-    <text>手机和固话：</text>
-    <input type='text' placeholder='请输入手机或固话'></input> 
+    <text>手机或固话：</text>
+    <input type='text' name="maintenancephone" placeholder='请输入手机或固话'  value="{{clearValue}}"></input> 
 </view>
 <view class='submitView'>
  <button class='submit' form-type='submit'>提交审核</button>

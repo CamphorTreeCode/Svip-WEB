@@ -4,9 +4,9 @@
 <!--遮罩-->
 <view>
     <view class='ww  w1'><image  src='https://www.chuanshoucs.com/ServerImg/2018-05-16/dc2843ed-92d3-4e31-b39d-76be08e74b9e.png'></image>品牌</view>
-    <view class='a'><image class='b' src='{{aboutmeimg}}'></image></view>
+    <view class='a'><image class='b' src='{{aboutmeimg}}' mode="aspectFill"></image></view>
     <view class='ss'>{{aboutmecontent}}</view>
-    <view class='ww sc w2'><image src='https://www.chuanshoucs.com/ServerImg/2018-05-16/928d492e-7d8b-4c08-97fc-eb80bdea4fae.png'></image>团队及服务</view>
+    <view class='ww sc w2'><image src='https://www.chuanshoucs.com/ServerImg/2018-05-16/928d492e-7d8b-4c08-97fc-eb80bdea4fae.png' ></image>团队及服务</view>
     <view class='ss'>{{aboutmeserver}}</view>
     <!-- <view class='ss sa'>{{}}</view> -->
 </view>

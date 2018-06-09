@@ -16,7 +16,12 @@ page{ background-color: #fff;}
 .model .value{ width: 100%;}
 /*购买平台*/
 .platform view{ float: left;}
-.platform image{ width:40rpx; height: 40rpx; margin-top:5%; float: right; margin-right: -3%;}
+.platform image{width:40rpx;
+height:40rpx;
+position:absolute;
+top:19.5%;
+right:4%;
+}
 /*选择地区*/
 .address view{ float: left;}
 .address image{width:40rpx; height: 40rpx; margin-top:4%; float: right;}

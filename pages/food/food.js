@@ -91,14 +91,17 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    return {
+      imageUrl: app.globalData.shareImg,
+      // title: app.globalData.shareTitle
+    }
   },
 
   //跳转到食谱详情页面
   tupian:function(e){
     console.info(e)
     wx.navigateTo({
-      url: '/pages/food/foodpractice/foodpractice?lid=' + e.currentTarget.dataset.lid + ''
+      url: '/pages/food/foodpractice/foodpractice?id=' + e.currentTarget.dataset.id 
     })
   },
 

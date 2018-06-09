@@ -1,3 +1,6 @@
+var app = getApp();
+var WxParse = require('../../../wxParse/wxParse.js');
+
 Page({
   /**
    * 页面的初始数据
@@ -22,7 +25,8 @@ Page({
 
 
       }
-    ]
+    ],
+    recipes:[]
 
 
   },
@@ -31,7 +35,27 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    console.log(options)
+    var that = this;
+    wx.request({
+      url: app.globalData.appUrl + 'WXRecipes/findRecipesDetails',
+      data:{
+        recipesId:options.id
+      },
+      header: {
+        'content-type': 'application/x-www-form-urlencoded', // 默认值
+        xcxuser_name: "xcxuser_name"
+      },
+      success: function (res) {
+        console.info(res);
+        var article = res.data[0].recipesstep;
+        WxParse.wxParse('article', 'html', article, that, 5);
+        that.setData({
+        recipes:res.data[0]
+        })
+
+      }
+    })
   },
 
   /**
@@ -80,6 +104,9 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-    
+    return {
+      imageUrl: app.globalData.shareImg,
+      // title: app.globalData.shareTitle
+    }  
   }
 })

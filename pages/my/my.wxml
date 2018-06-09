@@ -7,19 +7,19 @@
 <view class='head'>
    <!--头像-->
    <view class='headPortrait'>
-    <image src='https://s18.postimg.cc/4jz97664p/touxiang.png' class='headPortrait'></image>
+    <image src='{{userInfo.avatarUrl}}' class='headPortrait'></image>
    </view>
    <!--用户名-->
    <view class='usernameOut'>
-      <view class='username'>Super VIP</view>
+      <view class='username'>{{userInfo.nickName}}</view>
    </view>
    <view class='clear'></view>
    <!--性别和年龄-->
-   <view class='AgeAndSexOut'>
+   <!-- <view class='AgeAndSexOut'>
     <view class='AgeAndSex'>
         <text>男\t21岁</text>
     </view>
-   </view>
+   </view> -->
 </view>
 <!--底部操作模块-->
 <view wx:for="{{operation}}"  wx:for-item="item" wx:for-index="index">

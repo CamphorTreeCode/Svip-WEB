@@ -2,22 +2,32 @@
 <my-component>
 </my-component>
 <!--遮罩-->
-<view wx:for="{{food}}"  wx:for-item="item" wx:for-index="index">
+<import src="/wxParse/wxParse.wxml" />
   <view class='operation' data-path='{{item.path}}' data-index='{{index}}' bindtap='operation'>
-    <image class='img1' src='{{item.image}}'></image>
-   <view class='b f'><text>"{{item.name}}"</text></view>
-    <view class='c'><text>已有{{item.frequency}}人浏览</text> <text class='right'>{{item.time}}</text></view>
+  
+  <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000" indicator-active-color="#FD7073"  indicator-color="#fff" circular="true">
+    <block wx:for="{{recipes.recipesSwiper}}"  wx:for-item="itemswiper">
+      <swiper-item>
+        <image src="{{itemswiper.recipesswiperimg}}" class="slide-image"  mode="aspectFill" />
+      </swiper-item>
+    </block>
+  </swiper>
+    <!-- <image class='img1' src='{{item.image}}'  mode="aspectFill" ></image> -->
+   <view class='b f'><text>"{{recipes.recipestitle}}"</text></view>
+    <view class='c'><text>已有{{recipes.recipesbrowse}}人浏览</text> <text class='right'>{{recipes.recipescreattime}}</text></view>
     <view class='d f'><text>需要材料</text></view>
-     <view class='d e' ><text>{{item.science}}</text></view>
+     <view class='d e' ><text>{{recipes.recipesdata}}</text></view>
       <view class='d f'><text>烹饪步骤</text></view>
-      <view  wx:for="{{item.steps}}"  wx:for-item="item" >
-         <view class='operation1' >
+       <view class='operation1' >
+       <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+       </view>
+      <!-- <view  wx:for="{{item.steps}}"  wx:for-item="item" >
+
             <view class='right_1'>
             <view class='left_1'>{{item.age}}</view>
-            <image src='{{item.image}}'> </image>
+            <image src='{{item.image}}'  mode="aspectFill" > </image>
             <text>{{item.explain}}</text>
             </view>
           </view>
-      </view>
+      </view> -->
   </view>
-</view>

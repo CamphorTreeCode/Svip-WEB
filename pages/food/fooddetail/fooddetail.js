@@ -1,5 +1,46 @@
 var app = getApp();
+var pagesize = 0
+function selectOrderState(that) {
+  wx.request({
+    url: app.globalData.appUrl + 'WXRecipes/findRecipesList',
+    data: {
+      recipesTypeId: that.data.recipesTypeId,
+      currentPage: ++pagesize
+    },
+    header: {
+      // 'content-type': 'application/x-www-form-urlencoded' // 默认值
+      'content-type': 'application/x-www-form-urlencoded', // 默认值
+      xcxuser_name: "xcxuser_name"
+    },
+    method: 'get',
+    success: function (res) {
 
+
+
+      if (res.data[0].lists.length > 0) {
+
+        var food = that.data.food
+        for (var i = 0; i < res.data[0].lists.length; i++) {
+
+          food.push(res.data[0].lists[i])
+        }
+
+
+
+        console.info(res.data[0].lists, food)
+        that.setData({
+          food,
+          showLoading: true
+        })
+      } else {
+        that.setData({
+          bottomText: false,
+          showLoading: true
+        })
+      }
+    }
+  })
+}
 Page({
 
   /**
@@ -8,31 +49,24 @@ Page({
   data: {
     leibie:"烘焙类", 
     food:[],
+    bottomText: true
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    let scrollHeight = wx.getSystemInfoSync().windowHeight;
+    this.setData({
+      scrollHeight: scrollHeight
+    });
       console.info(options)
       var that = this;
-      wx.request({
-        url: app.globalData.appUrl + 'WXRecipes/findRecipesList?recipesTypeId=' + options.lid+'',
-        header: {
-          'content-type': 'application/x-www-form-urlencoded', // 默认值
-          xcxuser_name: "xcxuser_name"
-        },
-
-        success: function (res) {
-          console.info(res);
-
-         that.setData({
-            food : res.data,
-         })
-         
-        }
+      that.setData({
+        recipesTypeId: options.lid
       })
-
+      pagesize = 0
+    selectOrderState(that);
     // 修改头部导航栏标题
     var da = this.data.leibie;
     wx.setNavigationBarTitle({
@@ -86,41 +120,28 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-    
+    return {
+      imageUrl: app.globalData.shareImg,
+      // title: app.globalData.shareTitle
+    }
   },
   operation: function (e) {
-    var index = e.currentTarget.dataset.index
+    var index = e.currentTarget.dataset.id
     console.log(index)
-    if (index == 0) {
+
       wx.navigateTo({
-        url: 'pages/food/foodpractice/foodpractice'
+        url: '/pages/food/foodpractice/foodpractice?id=' + index
       })
-    }
-    if (index == 1) {
-      wx.navigateTo({
-        url: 'pages/food/foodpractice/foodpractice'
-      })
-    }
-    if (index == 2) {
-      wx.navigateTo({
-        url: 'pages/food/foodpractice/foodpractice'
-      })
-    }
-    if (index == 3) {
-      wx.navigateTo({
-        url: 'pages/food/foodpractice/foodpractice'
-      })
-    }
-    if (index == 4) {
-      wx.navigateTo({
-        url: 'pages/food/foodpractice/foodpractice'
-      })
-    }
-    if (index == 5) {
-      wx.navigateTo({
-        url: 'pages/food/foodpractice/foodpractice'
-      })
-    }
+    
+  },
+  //下拉刷新功能
+  lower() {
+    console.log(1)
+    this.setData({
+      showLoading: false
+    })
+    selectOrderState(this)
+    
   }
 
 })

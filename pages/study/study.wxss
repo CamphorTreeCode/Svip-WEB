@@ -11,7 +11,7 @@ view{background: white}
 .top{border-top: 1px solid rgb(243,243,243);border-bottom: 1px solid rgb(243,243,243);padding: 20rpx 20rpx}
 .a1{font-weight: bold;font-size: 36rpx}
 .a2{display: inline-block;line-height: 100rpx;float:right;color: rgb(255,102,109);font-size:32rpx;}
-.bottom image{width: 100%;border-radius: 8rpx}
+.bottom image{width: 100%;border-radius: 8rpx;height: 100%}
 .b_a{color: rgb(12,162,254);margin-bottom: 20rpx}
 .b_c{font-weight: bold;margin-top: 20rpx}
 .b_b{overflow:hidden; text-overflow:ellipsis;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2; margin: 20rpx 0;color: rgb(154,154,154)}
@@ -23,4 +23,13 @@ view{background: white}
  video{width: 100%;}
  .qqqq image{float: left;display: block;width: 210rpx;height: 220rpx;border-radius: 15rpx ;margin-left: 20rpx}
  .qqqq{display: inline-block;}
- 
+ .spinner{
+   background:transparent;
+ }
+ .bottomText{
+   background: transparent;
+ }
+ .img_a{
+   height:170px;
+
+ }

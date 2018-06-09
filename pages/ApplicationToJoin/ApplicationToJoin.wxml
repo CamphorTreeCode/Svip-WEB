@@ -10,7 +10,7 @@
 </view>
 <!--banner图展示-->
 <view class='banner'>
-   <image src='{{franchiseDetailsImg}}'></image>
+   <image src='{{franchiseDetailsImg}}' mode="aspectFill"></image>
 </view>
 <!--文本展示-->
 <view class='text'>
@@ -18,41 +18,44 @@
       {{franchiseDetailsContent}}
    </text>
 </view>
-<form bindsubmit='formSubmit'>
+<form bindsubmit='formSubmit' hidden="{{franchiseState}}" report-submit>
 <view class='apply'>
   <!--申请加入-->
   <view class='applyToJoin title'>
       <image src='/img/ApplicationToJoin/jiarujiazu@2x.png '></image>
       <text>申请加入</text>
   </view>
+    <view class='formProperty'  hidden="{{franchuseNum==2?false:true}}">
+      <text style="color:#FD8990">审核未通过，请重新填写</text>     
+  </view>
   <!--姓名输入框-->
   <view class='formProperty'>
       <text>姓\t名\t\t：</text>
-      <input type='text' placeholder='输入你的姓名'></input> 
+      <input type='text' name="franchisename" placeholder='输入你的姓名'></input> 
       
   </view>
   <!--消费平台-->
   <view class='formProperty platform' bindtap='choosePlatform'>
       <view class='property'>消费平台（可多选）</view>
-      <text>{{platform}}</text>
+      <input name="franchiseconsumption" value="{{platform}}"></input>
       <image src='/img/ApplicationToJoin/498336855345553797.png '></image>  
   </view>
   <!--订单号-->
   <view class='formProperty'>
       <text>订单号：</text>
-      <input type='text' placeholder='请输入订单号'></input>  
+      <input type='text' name="franchiseordernmuber" placeholder='请输入订单号'></input>  
   </view>
   <!--联系电话-->
   <view class='formProperty'>
       <text>联系电话：</text>
-      <input type='text' placeholder='请输入您的联系方式'></input> 
+      <input type='text' name="franchisephone" placeholder='请输入您的联系方式'></input> 
   </view>
   <!--申请理由-->
   <view class='formProperty applyReasontext'>
       <view class='property'>申请理由</view>
   </view>
   <view class='applyReason'>
-       <textarea placeholder='请填写你的加盟理由'></textarea>
+       <textarea name="franchiseapplyreason" placeholder='请填写你的加盟理由'></textarea>
   </view>
   <!--提交按钮-->
   <view class='submitView'>
@@ -61,9 +64,9 @@
 </view>
 </form>
 <!--等待中-->
-<view class='wait'>
+<view class='wait' hidden="{{!franchiseState?true:false}}">
    <view class='image'><image src='/img/ApplicationToJoin/600512266550061969.png '></image></view>
    <view class='textOut'>
-    <view class='text'>审核中</view>
+    <view class='text'>{{franchuseNum==0?'审核中':franchuseNum==1?'已通过':''}}</view>
    </view>
 </view>

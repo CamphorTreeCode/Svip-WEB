@@ -24,7 +24,7 @@ function selectTypePage(that){
     data: {
       shopTypeId: that.data.shopTypeId+1,
       currentPage: ++pagesize,
-      shoptitle: that.data.inputVal == '' ? null : that.data.inputVal
+      shoptitle: that.data.inputVal
     },
     header: {
       // 'content-type': 'application/x-www-form-urlencoded' // 默认值
@@ -46,7 +46,20 @@ function selectTypePage(that){
 
         console.info(res.data[0].lists, shopList)
         that.setData({
-          shopList
+          shopList,
+          showData: true,
+          showLoading: true
+        })
+      } else {
+        that.setData({
+          bottomText: false,
+          showLoading: true
+        })
+      }
+       if (that.data.inputVal != null && that.data.shopList.length==0){
+        that.setData({
+          showData:false,
+          bottomText: true
         })
       }
     }
@@ -66,26 +79,27 @@ Page({
       selectImg: '/img/type/doujiang2.png',
       selectFalg: true
 
-    }, {
-      text: '洗碗机',
-      img: '/img/type/xiwanji1.png',
-      selectImg: '/img/type/xiwanji2.png',
-      selectFalg: false
     }
       , {
       text: '净水器',
       img: '/img/type/jingshuiqi1.png',
       selectImg: '/img/type/jingshuiqi2.png',
       selectFalg: false
-    }, {
+      }, {
+        text: '酸奶机',
+        img: '/img/type/nuannaiqi1.png',
+        selectImg: '/img/type/nuannaiqi2.png',
+        selectFalg: false
+      }, {
+      text: '洗碗机',
+      img: '/img/type/xiwanji1.png',
+      selectImg: '/img/type/xiwanji2.png',
+      selectFalg: false
+    }
+     , {
       text: '机器人',
       img: '/img/type/jiqiren1.png',
       selectImg: '/img/type/jiqiren2.png',
-      selectFalg: false
-    }, {
-      text: '酸奶机',
-      img: '/img/type/nuannaiqi1.png',
-      selectImg: '/img/type/nuannaiqi2.png',
       selectFalg: false
     }, {
       text: '护理机',
@@ -142,13 +156,19 @@ Page({
     ],
     shopTypeId:0,
     searchValue:"搜索",
-    inputVal: null
+    inputVal: null,
+    showData:true,
+    bottomText: true
 
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    let scrollHeight = wx.getSystemInfoSync().windowHeight;
+    this.setData({
+      scrollHeight: scrollHeight
+    });
     // this.setData({
     //   yemian: options.addrIfo
     // }) 
@@ -156,13 +176,23 @@ Page({
     // this.setData({
     //   currentTab: ss
     // });
+    console.log(options, options.id != "", options.id != null)
+    if ( options.id!=null){
+      console.log("進來")
+      this.setData({
+        shopTypeId: parseInt(options.id)-1,
+        currentTab: parseInt(options.id) - 1
+      })
+    }else{
+
+    }
      this.checkCor();
      this.setData({
        shopList: []
     
      })
      pagesize = 0
-    selectTypePage(this)
+     selectTypePage(this)
   },
 
   /**
@@ -211,7 +241,10 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    return {
+      imageUrl: app.globalData.shareImg,
+      // title: app.globalData.shareTitle
+    }
   },
   showInput: function () {
     this.setData({
@@ -221,6 +254,9 @@ Page({
   hideInput: function (e) {
     console.log("进来搜索。")
     pagesize = 0
+    this.setData({
+      shopList: [],
+    })
     selectTypePage(this)
     this.setData({
       inputShowed: true
@@ -243,7 +279,8 @@ Page({
    console.log(e)
 
    this.setData({
-     searchValue: this.data.selectValue[e.detail.current].text
+     searchValue: this.data.selectValue[e.detail.current].text,
+     bottomText: true
    })
     if (this.data.currentTab == e.detail.current) {
       console.log("等于的时候");
@@ -269,7 +306,8 @@ Page({
     var cur = e.currentTarget.dataset.current;
     var value = e.currentTarget.dataset.value;
     this.setData({
-      searchValue: value
+      searchValue: value,
+      bottomText: true
     })
 
     if (this.data.currentTab == cur) { return false; }
@@ -307,14 +345,19 @@ Page({
   //跳转商品详情页面
   shopDetails(e){
     console.log("跳转商品")
+    console.log(e)
+    var shopid = e.currentTarget.dataset.id
     wx.navigateTo({
-      url: '/pages/Product/shopDetails/shopDetails'
+      url: '/pages/Product/shopDetails/shopDetails?shopId=' + shopid
     })
   },
   //上拉刷新
   lower() {
     console.log("..")
     var that = this
+    that.setData({
+      showLoading: false
+    })
     selectTypePage(that)
   }
 

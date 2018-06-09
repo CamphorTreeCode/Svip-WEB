@@ -11,10 +11,11 @@ Page({
       { image: '/img/my/fenxiaoshang.png ', text: '成为分销商', path:'/pages/ApplicationToJoin/ApplicationToJoin'},
       { image: '/img/my/kaquan.png  ', text: '我的卡劵', path: '' },
       { image: '/img/my/yeji.png ', text: '业绩管理', path: '/pages/svipLogin/svipLogin'},
-      { image: '/img/my/dingdan.png ', text: '订单审核', path: '' },
+      // { image: '/img/my/dingdan.png ', text: '订单审核', path: '' },
       { image: '/img/my/kefu.png ', text: '联系客服', path: '' }
 
       ],
+    userInfo:[]
   
   },
 
@@ -22,7 +23,15 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-   
+    var that = this
+    wx.getUserInfo({
+      success: function (res) {
+        console.log(res.userInfo)
+        that.setData({
+          userInfo: res.userInfo
+        })
+      }
+    })
   },
 
   /**
@@ -71,7 +80,10 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-  
+    return {
+      imageUrl: app.globalData.shareImg,
+      // title: app.globalData.shareTitle
+    }
   },
   operation:function(e){
     var path = e.currentTarget.dataset.path
@@ -96,17 +108,17 @@ Page({
         url:path,
       })
     }
-    if (index == 3) {
-      wx.navigateTo({
-        url: '/pages/index/cardCenter/cardCenter',
-        url: '/pages/order/order',
-      })
-    }
+    // if (index == 3) {
+    //   wx.navigateTo({
+    //     url: '/pages/index/cardCenter/cardCenter',
+    //     url: '/pages/order/order',
+    //   })
+    // }
 
 
-    if(index==4){
+    if(index==3){
       wx.makePhoneCall({
-        phoneNumber: '13564933014',
+        phoneNumber: '0760-22129456',
         success: function () {
           console.log("拨打电话成功！")
         },

@@ -3,6 +3,7 @@
 <my-component>
 </my-component>
 <!--遮罩-->
+  <scroll-view scroll-y style='height:{{scrollHeight}}px' bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
 <view class='header' wx:for="{{top}}">
     <view class='top'>
         <image src='https://www.chuanshoucs.com/ServerImg/2018-05-11/705e081f-a6fb-4bcd-9711-8f1a1092a29d.png'></image>
@@ -19,11 +20,11 @@
       <view class='b_b'><text>{{item.type}}</text></view>
       <view class='b_a' bindtap='lujing' data-lid="{{item.learningworldid}}"><text>查看详情</text></view>
        <view class='img_a' wx:if="{{item.learningworldvideourl!=''}}">
-        <video  src='/img/study/movie.ogg' ></video>
+        <image  src='{{item.learningworldvideoimgurl}}' mode="aspectFill"></image>
        </view>
       <view class='aaa  qqqq' wx:if="{{item.learningworldvideourl==''}}" >
             <i wx:for="{{item.learningWorldImg}}" wx:for-item="lxy">
-            <image src="{{lxy.learningworldimgurl}}"></image>
+            <image src="{{lxy.learningworldimgurl}}" ></image>
             </i>
       </view>
       <!--点赞与浏览量-->
@@ -33,5 +34,14 @@
         <image  class='b_aa' src='https://www.chuanshoucs.com/ServerImg/2018-05-11/2c71c135-0189-4520-9bbf-77ebac0b8648.png'></image>
         <text>{{item.learningworldfabulous}}</text></view>
     </view>
-
 </view>
+
+<view class="spinner" hidden='{{showLoading}}'>
+  <view class="rect1"></view>
+  <view class="rect2"></view>
+  <view class="rect3"></view>
+  <view class="rect4"></view>
+  <view class="rect5"></view>
+</view>
+<view class="bottomText" hidden='{{bottomText}}'>已经到底了</view>
+</scroll-view>

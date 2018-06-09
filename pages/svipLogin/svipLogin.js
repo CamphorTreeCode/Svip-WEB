@@ -63,7 +63,10 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-  
+    return {
+      imageUrl: app.globalData.shareImg,
+     // title: app.globalData.shareTitle
+    }
   },
   formSubmit:function(e){
        console.info('触发事件')

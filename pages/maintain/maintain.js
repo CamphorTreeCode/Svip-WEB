@@ -1,4 +1,82 @@
 // pages/maintain/maintain.js
+//表单验证
+var app = getApp();
+function yanzheng(Maintenance) {
+  if (Maintenance.maintenancemodel == '') {
+    wx.showToast({
+      title: '请输入机器型号',
+      icon: 'none',
+      duration: 2000
+    })
+    return false;
+  }
+  if (Maintenance.maintenanceplatform == '') {
+    wx.showToast({
+      title: '请选择购买平台',
+      icon: 'none',
+      duration: 2000
+    })
+    return false;
+  }
+  if (Maintenance.maintenancenumber == '') {
+    wx.showToast({
+      title: '请填写订单号',
+      icon: 'none',
+      duration: 2000
+    })
+    return false;
+  }
+
+  if (Maintenance.maintenancename == '') {
+    wx.showToast({
+      title: '请填写姓名',
+      icon: 'none',
+      duration: 2000
+    })
+    return false;
+  }
+  if (Maintenance.maintenanceaddress == '') {
+    wx.showToast({
+      title: '请选择地址',
+      icon: 'none',
+      duration: 2000
+    })
+    return false;
+  }
+  if (Maintenance.maintenancedetailed == '') {
+    wx.showToast({
+      title: '请填写详细地址',
+      icon: 'none',
+      duration: 2000
+    })
+    return false;
+  }
+  if (Maintenance.maintenancephone == '') {
+    wx.showToast({
+      title: '请填写手机或固话',
+      icon: 'none',
+      duration: 2000
+    })
+    return false;
+  } else {
+    if (/[\u4E00-\u9FA5]/g.test(Maintenance.maintenancephone)) {
+      wx.showToast({
+        title: '联系方式不能包含汉字',
+        icon: 'none',
+        duration: 2000
+      })
+      return false;
+    } else {
+   
+      return true;
+    }
+
+  }
+
+  return true;
+}
+
+
 
 //地址插件所用数据
 var area = require('../../utils/area.js')
@@ -30,7 +108,10 @@ Page({
     citys: citys,
     countys: countys,
     value: [0, 0, 0],
-    platform: [1, 2, 3, 4]
+    platform: [],
+    province: "",
+    city: "",
+    county: "",
   
   },
 
@@ -87,7 +168,10 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-  
+    return {
+      imageUrl: app.globalData.shareImg,
+      // title: app.globalData.shareTitle
+    }
   },
   choosePlatform: function () {
     wx.navigateTo({
@@ -96,8 +180,45 @@ Page({
   },
   formSubmit:function(e){
        console.info('触发事件')
+       var that =this
+       var Maintenance = e.detail.value
+       Maintenance.maintenanceaddress = that.data.province + that.data.city + that.data.county
+       Maintenance.openid = app.returnOpenId()
+       Maintenance.maintenanceplatform = Maintenance.maintenanceplatform == "淘宝" ? '1' : Maintenance.maintenanceplatform== "天猫" ? '0' : ''
+       Maintenance.readstate = 0;
+       Maintenance.maintenancestate = 0;
+       Maintenance.formId = e.detail.formId;
+  
        console.info(e)
-
+       if (yanzheng(Maintenance)) {
+         var maintenance = Maintenance
+         wx.request({
+           url: app.globalData.appUrl + 'WXMaintenance/addMaintenanceMsg',
+           data: maintenance,
+           header: {
+             'content-type': 'application/x-www-form-urlencoded', // 默认值
+             xcxuser_name: "xcxuser_name"
+           },
+           success: function (res) {
+             console.info(res);
+             if (res.data) {
+               wx.showToast({
+                 title: '提交成功！',
+                 icon: 'none',
+                 duration: 2000
+               })
+              that.setData({
+                clearValue:'',
+                platform:''
+              })
+              //  that.setData({
+              //    franchiseState: res.data.franchiseState,
+              //    franchuseNum: 0
+              //  })
+             }
+           }
+         })
+       } 
   },
   //滑动事件
   bindChange: function (e) {

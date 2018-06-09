@@ -4,11 +4,11 @@
 <my-component>
 </my-component>
 <!--遮罩-->
-
+<import src="/wxParse/wxParse.wxml" />
 <swiper class="swiper" indicator-active-color="#FD7073" indicator-dots="true" autoplay="true" interval="5000" duration="1000"  circular="true"   indicator-color="#fff" >
-  <block wx:for="{{movies}}" wx:for-index="index">
+  <block wx:for="{{swiperArr}}" wx:for-index="index">
     <swiper-item>
-      <image src="{{item.url}}" class="slide-image" />
+      <image src="{{item.shopswiperimg}}" class="slide-image" mode="aspectFill" />
     </swiper-item>
   </block>
 </swiper>
@@ -20,11 +20,11 @@
     <view class="shopTextImg">
       <image src="{{shopDetails[0].typeImg==1?'/img/type/taobao.png':'/img/type/tianmao.png'}}"></image>
     </view>
-    <span class="spantext">{{shopDetails[0].title}}</span>
+    <span class="spantext">{{shopArr.shoptitle}}</span>
   </view>
  <view class="centerShlfopMoney">
-    <view class="leftMoney lf">劵后<span>¥{{shopDetails[0].shopMoneydis-shopDetails[0].discountMoney}} </span> </view>
-     <view class="rightMoney ri">原价¥{{shopDetails[0].shopMoneydis}} </view>
+    <view class="leftMoney lf">劵后<span>¥{{shopArr.shopSKUMoney[currentTab].shopskumoney-shopArr.shopDiscountMoney}} </span> </view>
+     <view class="rightMoney ri">原价¥{{shopArr.shopSKUMoney[currentTab].shopskumoney}} </view>
   </view> 
 
   <view class='bottomLable cl box'>
@@ -37,19 +37,21 @@
 <view class="youhuiquan">
     <image  src="/img/type/quan.png"></image>
     <view class="youhuiNumber">
-    <view class="number lf">￥<span>300</span></view>    
-    <view class="youhuiText">优惠卷</view>
+    <view class="number lf">￥<span>{{shopArr.shopDiscountMoney}}</span></view>    
+    <view class="youhuiText">优惠券</view>
     <view class="youhuiCopy">可一键复制</view>
     </view>
 
-    <view class="immediately">立即领券</view>
+    <view class="immediately"  data-shopid="{{shopArr.shopid}}" data-shopDiscountUrl="{{shopArr.shopdiscounturl}}" data-shopUrl="{{shopArr.shopurl}}" catchtap='copytkl'>立即领券</view>
 </view>
 <!--sku属性  start-->
 <view class='sku'>
-  <view class='xuanze'>已选<text >宝石红</text> </view>
-  <view class='xuan'  >颜色
-<text >绿色</text><text class='hong' >宝石红</text> <text >白色</text></view>
-
+  <view class='xuanze'>已选<text >{{selectValue}}</text> </view>
+  <view class='xuan' >颜色
+   <view wx:for="{{shopArr.shopSKUMoney}}" class="tab-item {{currentTab==index?'active':''}} " data-current="{{index}}"  data-id="{{item.shopskuid}}" data-value="{{item.shopskuspecifications}}" catchtap="swichNav" >
+    <text>{{item.shopskuspecifications}}</text>
+  </view>
+  </view>
 </view>
 <view class='sku_bottom'>
    <view class='chong'>规格</view>
@@ -61,13 +63,14 @@
 <!--sku属性  end>
 <!--图片详情  -->
 <view class="bottomDetatils">
+<!--        <template is="wxParse" data="{{wxParseData:article.nodes}}" />  -->
 <view class="listImg" wx:for="{{imgarr}}">
   <image src="{{item.img}}" mode="widthFix"></image>
   </view>
 </view>
 <!--固定底部沒做-->
 <view class="bottomfiex">
-  <view class="homeImg lf boxCenter"><image src="/img/type/home@2x.png"></image></view>
-  <view class="zhuanfa lf boxCenter">转发</view>
-  <view class="copyCode lf boxCenter">立即复制</view>
+  <view class="homeImg lf boxCenter" catchtap='tapHome'><image src="/img/type/home@2x.png"></image></view>
+  <view class="zhuanfa lf boxCenter"><button class="btnshare" open-type="share">转发</button></view>
+  <view class="copyCode lf boxCenter" data-shopid="{{shopArr.shopid}}" data-shopDiscountUrl="{{shopArr.shopdiscounturl}}" data-shopUrl="{{shopArr.shopurl}}" catchtap='copytkl'>立即复制</view>
 </view>

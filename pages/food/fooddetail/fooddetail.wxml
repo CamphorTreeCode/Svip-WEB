@@ -2,10 +2,11 @@
 <my-component>
 </my-component>
 <!--遮罩-->
+  <scroll-view scroll-y style='height:{{scrollHeight}}px' bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
 <view wx:for="{{food}}" wx:for-item="item" wx:for-index="index" class='aw' class='sss'>
-  <view class='operation aw' data-path='{{item.path}}' data-index='{{index}}' bindtap='operation'>
+  <view class='operation aw' data-path='{{item.path}}' data-id='{{item.recipesid}}' bindtap='operation'>
     <view class='left' wx:for="{{item.recipesSwiper}}" wx:for-item="items">
-      <image src='{{items.recipesswiperimg}}'></image>
+      <image src='{{items.recipesswiperimg}}'  mode="aspectFill"></image>
     </view>
     <view class='right'>
       <text class='name'>{{item.recipestitle}}</text>
@@ -17,3 +18,13 @@
     </view>
   </view>
 </view>
+
+<view class="spinner" hidden='{{showLoading}}'>
+  <view class="rect1"></view>
+  <view class="rect2"></view>
+  <view class="rect3"></view>
+  <view class="rect4"></view>
+  <view class="rect5"></view>
+</view>
+<view class="bottomText" hidden='{{bottomText}}'>已经到底了</view>
+ </scroll-view>

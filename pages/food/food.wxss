@@ -17,7 +17,7 @@ image{
   border-radius: 8rpx;
   width: 18%;
   height: 130rpx;
-  padding-top: 10rpx;
+  padding-top: 7rpx;
   margin-left: 2.5%;
   display: inline-block;
   float: left;

@@ -59,20 +59,21 @@ App({
   getOpenId: function () {
     console.log("獲取opoenid")
     var that = this
-    check.getLoginCheck(that)
+    userLogin.getOpenid()
   },
   returnOpenId: function () {
     var openid = wx.getStorageSync('openid')
+    console.log(openid)
     if (openid) {
       console.log("有openid")
     } else {
       console.log("沒有openid")
-      app.getOpenId();
+      this.getOpenId();
       openid = wx.getStorageSync('openid')
     }
     return openid
   },
-
+//
   globalData: {
     userInfo: null,
     winWidth: 0,
@@ -98,12 +99,13 @@ App({
  }
     ],
     addShareholderIcon:"https://s14.postimg.org/rc78jmj4h/image.png", 
-    //appUrl:"https://www.chuanshoucs.com/Svip/",
-    appUrl: "http://localhost/Svip/",
+   appUrl:"https://www.chuanshoucs.com/Svip/",
+//appUrl: "http://localhost/Svip/",
     appImgUrl:'https://www.chuanshoucs.com/ImgRegCompany/',
     showSQ: false,
     noneShowButton: true,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    shareImg:'https://www.chuanshoucs.com/ServerImg/2018-06-04/04448784-8b7c-4500-81e6-7f5b07591530.png'
   }
 })
 //www.chuanshoucs.com "http://localhost/Maven_Project/", https://www.chuanshoucs.com/RegCompany/ RegCompany

@@ -13,7 +13,7 @@
     </view>
     <view class='tutu'>
       <view class='tupian' wx:for="{{item.recipesList}}" wx:for-item="items">
-        <image wx:for="{{items.recipesSwiper}}" wx:for-item="itemImg" bindtap='tupian' src='{{itemImg.recipesswiperimg}}'></image>
+        <image wx:for="{{items.recipesSwiper}}" wx:for-item="itemImg" data-id="{{itemImg.recipesid}}" bindtap='tupian' src='{{itemImg.recipesswiperimg}}'  mode="aspectFill"></image>
       </view>
 
       <text class='txt' bindtap='gengduo' data-lid="{{item.recipestypeid}}">更多</text>

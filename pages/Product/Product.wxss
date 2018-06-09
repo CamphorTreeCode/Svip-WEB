@@ -212,3 +212,12 @@ font-size: 0.9rem;
   font-size: 0.65rem;
   line-height:13px;
 }
+.showData{
+  text-align: center;
+  line-height: 500rpx;
+  color:#999;
+}
+.spinner{
+  margin:20px auto;
+
+}

@@ -1,8 +1,7 @@
 /* pages/index/cardCenter/cardCenter.wxss */
 .yuhuiquanBody{
  height: 180rpx;
- padding:2% 3%;
-
+padding:10rpx 20rpx;
 position: relative
 }
 .cardImg {

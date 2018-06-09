@@ -3,28 +3,39 @@
 <my-component>
 </my-component>
 <!--遮罩-->
-<view class="yuhuiquanBody" wx:for="{{cardArr}}">
+  <scroll-view scroll-y style='height:{{scrollHeight}}px' bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+   
+<view class="yuhuiquanBody" wx:for="{{cardList}}">
   <view class="cardImg">
     <image src="/img/type/quan.png"></image>
   </view>
 
     <view class="shopimg">
-      <image src="{{item.img}}">
+      <image src="{{item.shop.shopSwiperList[0].shopswiperimg}}">
       </image>
     </view>
 
     <view class="mgdetails">
       <view class="titles">
-        {{item.titel}}
+        {{item.shop.shoptitle}}
       </view>
-      <view class="youhui">￥{{item.shopMoneydis}}</view>
+      <view class="youhui">￥{{item.shop.shopSKUMoney[0].shopskumoney}}</view>
     </view>
      <view class="number">
-      <view class="moneyNumber">￥<span class="mmubey">{{item.discountMoney}}</span></view>
-      <view class="text">优惠卷</view>
+      <view class="moneyNumber">￥<span class="mmubey">{{item.shop.shopDiscountMoney}}</span></view>
+      <view class="text">优惠券</view>
      </view>
-     <view class="lingqu">
+     <view class="lingqu" data-title="{{item.shop.shoptitle}}" data-shopid="{{item.shop.shopid}}" data-shopDiscountUrl="{{item.shop.shopdiscounturl}}" data-shopUrl="{{item.shop.shopurl}}" catchtap='copytkl'>
       一键领取
      </view>
   
 </view>
+<view class="spinner" hidden='{{showLoading}}'>
+  <view class="rect1"></view>
+  <view class="rect2"></view>
+  <view class="rect3"></view>
+  <view class="rect4"></view>
+  <view class="rect5"></view>
+</view>
+<view class="bottomText" hidden='{{bottomText}}'>已经到底了</view>
+</scroll-view>

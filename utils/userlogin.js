@@ -20,7 +20,7 @@ function login(that){
             data: userInfo,
             header: {
               'content-type': 'application/x-www-form-urlencoded', // 默认值
-
+              xcxuser_name: "xcxuser_name"
             },
             
 
@@ -55,7 +55,7 @@ function getOpenid() {
             header: {
               // 'content-type': 'application/x-www-form-urlencoded' // 默认值
               'content-type': 'application/json', // 默认值
-
+              xcxuser_name: "xcxuser_name"
             },
             success: function (res) {
               console.log(res)

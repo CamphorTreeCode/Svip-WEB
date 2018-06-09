@@ -32,12 +32,12 @@
   </view>
 </scroll-view>
 </view>
-<swiper class="tab-content" current="{{currentTab}}" duration="300" bindchange="switchTab" style="height:{{260*shopList.length/2}}px">
+<swiper class="tab-content" current="{{currentTab}}" duration="300" bindchange="switchTab"  style='height:{{scrollHeight}}px'>
   <swiper-item wx:for="{{[0,1,2,3,4,5]}}">
-    <scroll-view scroll-y="true" style="height:{{260*shopList.length/2}}px" class="scoll-h"   bindscrolltolower="lower">
+    <scroll-view scroll-y="true"  style='height:{{scrollHeight}}px' class="scoll-h"   bindscrolltolower="lower">
       <block wx:for="{{shopList}}" wx:key="*this">
         <!--每个商品 start  -->
-        <view class="shopList lf" catchtap='shopDetails'>
+        <view class="shopList lf" catchtap='shopDetails' data-id="{{item.shopid}}">
           <view class="topImg">
               <image mode="aspectFill" src="{{item.shopSwiperList[0].shopswiperimg}}"></image>
               <view class="youhuijuan" style="background-image:url('https://www.chuanshoucs.com/ServerImg/2018-04-18/9c5f5179-947a-4f10-b159-202384aaf17e.png');">
@@ -59,7 +59,18 @@
         </view>
         <!--每个商品 end  -->
       </block>
+      <!--没有数据暂无数据  -->
+<view class="spinner cl" hidden='{{showLoading}}'>
+  <view class="rect1"></view>
+  <view class="rect2"></view>
+  <view class="rect3"></view>
+  <view class="rect4"></view>
+  <view class="rect5"></view>
+</view>
+<view class="bottomText cl" hidden='{{bottomText}}'>已经到底了</view>
+      <view class="showData" hidden="{{showData}}">暂无数据</view>
     </scroll-view>
   </swiper-item>
+  
 </swiper>
 <!--右边下拉刷新  end-->
