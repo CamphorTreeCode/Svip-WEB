@@ -36,6 +36,7 @@ view{background: white}
     justify-content: center;
    align-items: center; 
    color: rgb(251,116,124);
+   font-size:1rem;
    }
  .bottoma .left{
    display: flex;
@@ -44,9 +45,10 @@ view{background: white}
    justify-content: center; 
    color: rgb(251,116,124);
    padding-left: 20rpx;
+   font-size: 0.9rem;
    } 
   button {
-    height: 80rpx;
+    height: 120rpx;
     font-size: 39rpx;
     color: #ccc;
     
@@ -54,4 +56,8 @@ view{background: white}
   }
 .shareBtu{background: #fff;} 
   /* .fenxiang{padding-right: 15rpx;display: inline-block;background: red;color: red} */
- 
+ .left image{
+    display: block;
+    margin-left: 1.5rem;
+    
+ }

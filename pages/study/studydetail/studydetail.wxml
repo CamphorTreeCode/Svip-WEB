@@ -57,7 +57,9 @@
       <!-- <view v-if="0" style='color:#red'>赞一下</view> -->
     </view>
     <view class='left'>
+      <button class="shareBtu" hover-class="shareBtu"  open-type="share">
       <image bindtap='onimg1' src='https://www.chuanshoucs.com/ServerImg/2018-05-11/3604a53a-7842-490e-8888-20030d79ccdc.png'></image>
-     <button class="shareBtu" hover-class="shareBtu"  open-type="share">分享一下</button>
+      <text>分享一下</text>
+     </button>
     </view>
 </view>

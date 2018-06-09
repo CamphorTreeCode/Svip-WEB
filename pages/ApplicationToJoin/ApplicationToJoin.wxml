@@ -36,7 +36,7 @@
   </view>
   <!--消费平台-->
   <view class='formProperty platform' bindtap='choosePlatform'>
-      <view class='property'>消费平台（可多选）</view>
+      <view class='property'>消费平台（请选择）</view>
       <input name="franchiseconsumption" value="{{platform}}"></input>
       <image src='/img/ApplicationToJoin/498336855345553797.png '></image>  
   </view>
