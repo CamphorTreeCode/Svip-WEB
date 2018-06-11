@@ -29,7 +29,7 @@
     </view>
 
     <view class='img_a' hidden="{{item.learningworldvideourl == ''? true : false}}">
-      <video src='{{item.learningworldvideourl}}' ></video>
+      <video  custom-cache="{{false}}" src='{{item.learningworldvideourl}}' ></video>
     </view>
     <view class='aaa  qqqq' hidden="{{item.learningworldvideourl == ''? false : true}}">
     

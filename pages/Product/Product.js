@@ -1,7 +1,6 @@
 // pages/Product/Product.js
 var app = getApp();
 function selectTabImg(that, index) {
-
   var selectValue = that.data.selectValue
   for (var i = 0; i < selectValue.length; i++) {
     if (selectValue[i].selectFalg) {
@@ -9,7 +8,6 @@ function selectTabImg(that, index) {
     }
   }
   selectValue[index].selectFalg = !selectValue[index].selectFalg
-
   that.setData({
     selectValue: selectValue
   })
@@ -177,17 +175,20 @@ Page({
     //   currentTab: ss
     // });
     console.log(options, options.id != "", options.id != null)
+    console.info("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%")
+    console.info((Number(Boolean(options.id))))
     if ( options.id!=null){
       console.log("進來")
+      selectTabImg(this, parseInt(options.id) - 1);
       this.setData({
         shopTypeId: parseInt(options.id)-1,
-        currentTab: parseInt(options.id) - 1
+        currentTab: parseInt(options.id)-1
       })
     }else{
 
     }
      this.checkCor();
-     selectTabImg(this, parseInt(options.id) - 1)
+     
      this.setData({
        shopList: []
     
