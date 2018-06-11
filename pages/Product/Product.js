@@ -175,8 +175,6 @@ Page({
     //   currentTab: ss
     // });
     console.log(options, options.id != "", options.id != null)
-    console.info("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%")
-    console.info((Number(Boolean(options.id))))
     if ( options.id!=null){
       console.log("進來")
       selectTabImg(this, parseInt(options.id) - 1);
