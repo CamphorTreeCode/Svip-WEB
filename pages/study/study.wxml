@@ -18,7 +18,8 @@
       <view class='b_c'><text>{{item.learningworldtitle}}</text></view>
       <view class='b_b'><text>{{item.learningworldcontent}}</text></view>
       <view class='b_b'><text>{{item.type}}</text></view>
-      <view class='b_a' bindtap='lujing' data-lid="{{item.learningworldid}}"><text>查看详情</text></view>
+      <view class='b_a' bindtap='lujing' data-lid="{{item.learningworldid}}">
+      <view><text>查看详情</text></view>
        <view class='img_a' wx:if="{{item.learningworldvideourl!=''}}">
         <image  src='{{item.learningworldvideoimgurl}}' mode="aspectFill"></image>
        </view>
@@ -26,6 +27,7 @@
             <i wx:for="{{item.learningWorldImg}}" wx:for-item="lxy">
             <image src="{{lxy.learningworldimgurl}}" mode="aspectFill" ></image>
             </i>
+      </view>
       </view>
       <!--点赞与浏览量-->
       <view class='b_d'>
