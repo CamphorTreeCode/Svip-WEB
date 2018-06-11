@@ -75,6 +75,16 @@ background:#FA7173;
 border-radius:50%;
 margin-right:4%;
 }
+.lableBody .lableText{
+
+  /* 超出一行文字自动隐藏 */
+
+  overflow:hidden;
+/* 强制不换行 */
+white-space:nowrap;
+
+
+}
 .youhuiquan{
 height:130rpx;
 border-top:12px solid #F2F2F2;

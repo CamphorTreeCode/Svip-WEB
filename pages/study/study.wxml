@@ -24,7 +24,7 @@
        </view>
       <view class='aaa  qqqq' wx:if="{{item.learningworldvideourl==''}}" >
             <i wx:for="{{item.learningWorldImg}}" wx:for-item="lxy">
-            <image src="{{lxy.learningworldimgurl}}" ></image>
+            <image src="{{lxy.learningworldimgurl}}" mode="aspectFill" ></image>
             </i>
       </view>
       <!--点赞与浏览量-->
