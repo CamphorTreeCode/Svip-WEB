@@ -10,7 +10,7 @@ Page({
     operation:[
       { image: '/img/my/fenxiaoshang.png ', text: '成为分销商', path:'/pages/ApplicationToJoin/ApplicationToJoin'},
       { image: '/img/my/kaquan.png  ', text: '我的卡劵', path: '' },
-      { image: '/img/my/yeji.png ', text: '业绩管理', path: '/pages/svipLogin/svipLogin'},
+      // { image: '/img/my/yeji.png ', text: '业绩管理', path: '/pages/svipLogin/svipLogin'},
       // { image: '/img/my/dingdan.png ', text: '订单审核', path: '' },
       { image: '/img/my/kefu.png ', text: '联系客服', path: '' }
 

@@ -187,6 +187,7 @@ Page({
 
     }
      this.checkCor();
+     selectTabImg(this, parseInt(options.id) - 1)
      this.setData({
        shopList: []
     

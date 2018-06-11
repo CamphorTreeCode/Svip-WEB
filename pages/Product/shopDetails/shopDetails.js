@@ -47,7 +47,11 @@ Page({
     swiperArr:[],
     title:'',
     PID: '',
-    currentTab:0
+    currentTab:0,
+    shopLable:[],
+    shopdetails:[],
+    W:"",
+   
       
   },
 
@@ -57,7 +61,6 @@ Page({
   onLoad: function (options) {
     console.log(options)
     var that = this
-
     wx.request({
       url: app.globalData.appUrl + 'WXShop/findShopDetails',
       data: { shopId: options.shopId},
@@ -67,14 +70,25 @@ Page({
       },
       success: function (res) {
         console.info(res);
+        var shoplable = JSON.parse(res.data[0].shoplable);
+        var shopdetails = JSON.parse(res.data[0].shopdetails);
+        //console.info(shopdetails)
         // console.info(res.data[0].franchisedetailscontent);
+        var article = res.data[0].shopcontent;
+        WxParse.wxParse('article', 'html', article, that, 5);
         that.setData({
           shopArr:res.data[0],
           swiperArr: res.data[0].shopSwiperList,
-          title: res.data[0].shoptitle
+          startImg: res.data[0].shopSwiperList,
+          title: res.data[0].shoptitle,
+          shopLable: shoplable,
+          shopDetails: shopdetails,
+          W: wx.getSystemInfoSync().windowWidth,  
         })
-        var article = res.data.relaaseProjectContent;
-        WxParse.wxParse('article', 'html', article,that, 5);
+        console.info(wx.getSystemInfoSync().windowWidth)
+        // var article = res.data.relaaseProjectContent;
+        // WxParse.wxParse('article', 'html', article,that, 5);
+        
       }
     })
     var OpenId = app.returnOpenId()
@@ -164,7 +178,7 @@ Page({
   
   },
   swichNav: function (e) {
-
+    console.info(e)
     var cur = e.currentTarget.dataset.current;
     var shopArr = this.data.shopArr
     var swiperArr= this.data.swiperArr
@@ -177,8 +191,9 @@ Page({
       swiperArr,
       selectValue
     })
-    console.log(cur)
-    if (this.data.currentTab == cur) { return false; }
+    console.log("颜色"+cur)
+    if (this.data.currentTab == cur) { 
+      return false; }
     else {
       this.setData({
         currentTab: cur

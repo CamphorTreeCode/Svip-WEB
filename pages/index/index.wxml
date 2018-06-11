@@ -46,14 +46,14 @@
       <view class="imgsan ri">
         <image src="/img/sanjiaxin.png"></image>
       </view>
-      <view class="rigngtext ri" data-id="{{item.shoptypeid}}"  bindtap='jingshui' >更多</view>
+      <view class="rigngtext ri" data-id="{{item.shoptypeid}}"  bindtap='jingshui' >更多</view> 
     </view>
 
     <!--商品展示列表  start-->
     <view class="shopItem">
       <view class="oneShop lf"  wx:for="{{item.shop}}" wx:for-item="items" data-shopid="{{items.shopid}}" catchtap='shopDetails'>
         <view class="shopImg">
-          <image src="{{items.shopSwiperList[0].shopswiperimg}}"></image>
+          <image src="{{items.shopSwiperList[0].shopswiperimg}}" mode="aspectFill"></image>
           <view class="youhuijuan" style="background-image:url('https://www.chuanshoucs.com/ServerImg/2018-04-18/9c5f5179-947a-4f10-b159-202384aaf17e.png');">
             <view class="yhjTextt yhjtxt">优惠劵</view>
             <view class="yhjTextt">{{items.shopDiscountMoney}}元</view>

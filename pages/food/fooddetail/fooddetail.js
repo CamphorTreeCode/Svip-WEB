@@ -15,8 +15,6 @@ function selectOrderState(that) {
     method: 'get',
     success: function (res) {
 
-
-
       if (res.data[0].lists.length > 0) {
 
         var food = that.data.food
@@ -25,12 +23,15 @@ function selectOrderState(that) {
           food.push(res.data[0].lists[i])
         }
 
-
-
         console.info(res.data[0].lists, food)
         that.setData({
           food,
-          showLoading: true
+          showLoading: true,
+          leibie: res.data[0].lists[0].recipesType.recipestypename,
+        })
+        // 修改头部导航栏标题
+        wx.setNavigationBarTitle({
+          title: res.data[0].lists[0].recipesType.recipestypename,
         })
       } else {
         that.setData({
@@ -38,6 +39,7 @@ function selectOrderState(that) {
           showLoading: true
         })
       }
+      //console.info(that.data.leibie+"**************************************************************************")
     }
   })
 }
@@ -47,7 +49,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    leibie:"烘焙类", 
+    leibie:"", 
     food:[],
     bottomText: true
   },
@@ -67,11 +69,7 @@ Page({
       })
       pagesize = 0
     selectOrderState(that);
-    // 修改头部导航栏标题
-    var da = this.data.leibie;
-    wx.setNavigationBarTitle({
-      title: da,
-    }) 
+    console.info(this.data.leibie)
   },
 
   /**
