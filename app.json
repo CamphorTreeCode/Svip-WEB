@@ -1,5 +1,5 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
     "pages/Product/Product",
     "pages/ApplicationToJoin/ApplicationToJoin",
@@ -18,12 +18,12 @@
     "pages/study/studydetail/studydetail",
     "pages/ous/ous",
     "pages/order/order"
-],
-  "window":{
-  "backgroundTextStyle":"light",
-  "navigationBarBackgroundColor": "#fff",
-  "navigationBarTitleText": "超级VIP",
-  "navigationBarTextStyle": "black"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "超级VIP",
+    "navigationBarTextStyle": "black"
   },
   "tabBar": {
     "color": "#A3A3A3",
@@ -31,10 +31,10 @@
     "borderStyle": "white",
     "list": [
       {
-      "pagePath": "pages/index/index",
-      "text": "首页",
-      "iconPath": "/img/shouye1.png",
-      "selectedIconPath": "/img/shouye.png"
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/img/shouye1.png",
+        "selectedIconPath": "/img/shouye.png"
       },
       {
         "pagePath": "pages/Product/Product",
@@ -49,10 +49,10 @@
         "selectedIconPath": "/img/tuandui.png"
       },
       {
-      "pagePath": "pages/my/my",
-      "text": "我的",
-      "iconPath": "/img/my1.png",
-      "selectedIconPath": "/img/my.png"
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "/img/my1.png",
+        "selectedIconPath": "/img/my.png"
       }
     ]
   }
